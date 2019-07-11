@@ -1,0 +1,166 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 3/07/2019, 10:55:24 AM
+    Author     : willy
+*/
+
+.sup-fran-azul {
+    background-color: #1990bf;
+    display: block;    
+}
+
+.sup-menu{
+    float: right;
+    margin: 5px 20px 5px 0;
+    list-style: none;      
+}
+
+.sup-menu li{
+    width: 130px;
+    float: left;
+}
+
+.sup-menu li a{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.sup-fran-banner {
+    background-color: #17a2b8;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;    
+}
+
+.sup-fran-banner-nombre{
+    background-color: #A6DCE4;
+    border-radius: 9px 9px 9px 9px;
+    -moz-border-radius: 9px 9px 9px 9px;
+    -webkit-border-radius: 9px 9px 9px 9px;
+    border: 0px solid #000000;
+    height: auto;
+    padding: 30px 30px 0 30px;
+    margin: 30px 0px;
+}
+
+.sup-fran-banner-button{
+    float: right;
+    margin: 5px 0 20px 0;
+    
+}
+
+.med-fran-verde{
+    background-color: #00888b;
+    display: block; 
+    
+}
+
+.med-fran-verde ul{
+    list-style: none;  
+    margin: 5px 0 5px 0;
+}
+
+.med-fran-verde ul li a{
+    color: #ffffff;  
+}
+
+.col-menu-left{
+    background-color: #b5b5b5;
+}
+
+.col-menu-left .anclas{
+    list-style: none;   
+}
+
+.col-menu-left .anclas li a{
+    color: white;
+}
+
+.col-menu-left button{       
+    font-size: 13px !important;
+}
+
+.col-menu-left .button-center button{       
+    font-size: 10px !important;
+}
+
+
+.subtitulos{
+    width: 100%;    
+    color: #ffffff;
+    font-size: 1.1em;
+    padding: 1px 0px 5px 10px;
+    background: #ca0067;
+    margin-bottom: 5px;
+    letter-spacing: 1.3pt;
+    margin-top: 1rem !important;
+}
+
+.subtitulos2{
+    width: 100%;    
+    color: #ffffff;
+    font-size: 2em;
+    padding: 10px 0;
+    background: #FC9400;    
+    letter-spacing: 1.3pt;
+    margin-top: 1rem !important;
+    text-align: center;
+    font-weight: bold;
+}
+
+.subtitulos3{
+    width: 100%;    
+    color: #ffffff;
+    font-size: 1.1em;
+    padding: 1px 0px 5px 10px;
+    background: #009FE3;
+    margin-bottom: 5px;
+    letter-spacing: 1.3pt;
+    margin-top: 1rem !important;
+    text-align: center;
+}
+
+.subtitulos3 a{
+    color: #ffffff;    
+}
+
+.subtitulos4{
+    width: 100%;    
+    color: #ffffff;
+    font-size: 1.1em;
+    padding: 1px 0px 5px 10px;
+    background: #009FE3;
+    margin-bottom: 5px;
+    letter-spacing: 1.3pt;
+    margin-top: 1rem !important;  
+    font-weight: bold;
+}
+
+.item{
+    height: 210px !important;
+}
+
+.item a{
+
+}
+
+.item h1{
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.item div{
+    text-align: justify;   
+    padding: 0 35px 0 35px;
+    height: 120px;
+}
