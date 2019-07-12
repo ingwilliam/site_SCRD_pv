@@ -42,6 +42,16 @@ $(document).ready(function () {
                     });
                     html_table = html_table+'</tbody></table>';                    
                     $( ".tablas_cronogramas" ).append(html_table);                    
+                }
+                
+                if(Object.keys(json.participantes).length>0)
+                {
+                    var html_table='<table class="table table-hover table-bordered"><thead><tr><th>Participante</th><th>Perfil específico del participante</th></tr></thead><tbody class="eventos">';                    
+                    $.each(json.participantes, function (key, participante) {
+                        html_table = html_table+'<tr><td>'+participante.participante+'</td><td>'+participante.descripcion+'</td></tr>';                    
+                    });
+                    html_table = html_table+'</tbody></table>';                    
+                    $( ".tablas_participantes" ).append(html_table);                    
                 }                
             }
             
