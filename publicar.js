@@ -17,7 +17,7 @@ $(document).ready(function () {
         {            
             var json = JSON.parse(data);
             
-            //Valido que la convocatorias no tenga categorias            
+            //Valido que la convocatorias tenga categorias con el fin de ocultar lo principal            
             if(json.convocatoria.tiene_categorias == true){
                 $(".sin_categorias").css("display","none");
             }
@@ -30,6 +30,23 @@ $(document).ready(function () {
             {
                 $(".es_bolsa_concursable").css("display","none");
             }
+            
+            
+            //Valido que la convocatorias no tenga categorias            
+            if(json.convocatoria.tiene_categorias == false){
+                if(Object.keys(json.cronogramas).length>0)
+                {
+                    var html_table='<table class="table table-hover table-bordered"><thead><tr><th>Tipo de evento</th><th>Fecha(s)</th><th>Descripción</th></tr></thead><tbody class="eventos">';                    
+                    $.each(json.cronogramas, function (key, evento) {
+                        html_table = html_table+'<tr><td>'+evento.tipo_evento+'</td><td>'+evento.fecha+'</td><td>'+evento.descripcion+'</td></tr>';                    
+                    });
+                    html_table = html_table+'</tbody></table>';                    
+                    $( ".tablas_cronogramas" ).append(html_table);                    
+                }                
+            }
+            
+            
+            
             
             $('#view_convocatoria').loadJSON(json.convocatoria);
         }
