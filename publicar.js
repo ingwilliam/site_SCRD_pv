@@ -38,7 +38,7 @@ $(document).ready(function () {
                     
                     if(Object.keys(json.categorias).length>0)
                     {
-                        
+                        $(".tablas_categorias_generales").css("display","block");                        
                         //creo tablas de categorias
                         var html_table='<table class="table table-hover table-bordered"><thead><tr><th>Nombre</th><th>Fecha(s)</th><th>Descripción</th></tr></thead><tbody>';                    
                         $.each(json.categorias, function (key, categoria) {
@@ -116,7 +116,7 @@ $(document).ready(function () {
                     {                      
                         var html_table = "";
                         $.each(json.rondas_evaluacion, function (key, ronda) {
-                            html_table = html_table+'<table class="table table-hover table-bordered"><caption>Ronda '+ronda.nombre+'</caption><thead><tr><th>N°</th><th>Criterio</th><th>Puntaje</th></tr></thead><tbody>';                    
+                            html_table = html_table+'<table class="table table-hover table-bordered"><caption>'+ronda.nombre+'</caption><thead><tr><th>N°</th><th>Criterio</th><th>Puntaje</th></tr></thead><tbody>';                    
                             html_table = html_table+'<tr><td>xxx</td><td>yyy</td><td>zzz</td></tr>';                    
                             html_table = html_table+'<tfoot><tr><td colspan="3">'+ronda.descripcion+'</td></tfoot>';
                             html_table = html_table+'</tbody></table>';                        
