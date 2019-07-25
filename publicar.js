@@ -1,3 +1,6 @@
+//WILLIAM SE QUEDO EN MOSTRAR RONDAS EN LAS CATEGORIAS GENERALES
+//HABLE CON CESAR SOBRE EL FUNCIONAMIENTO DEL FORMULARIO DE CRAER RONDAS
+
 $(document).ready(function () {
 
     //Validar si el navegador soporta localStorage, si no lo soporta lo envia directamente a la pagina de error
@@ -17,36 +20,50 @@ $(document).ready(function () {
         {            
             var json = JSON.parse(data);
             
-            //Valido que la convocatorias tenga categorias con el fin de ocultar lo principal            
-            if(json.convocatoria.tiene_categorias == true){
-                $(".sin_categorias").css("display","none");
-                $(".categorias_generales").css("display","none");
+            //verifica si la bolsa aplica para convocatorias sin categorias y convocatorias con categorias generales
+            var tipo_convocatoria="";            
+                        
+            //Valido que la convocatorias no tenga categorias            
+            if(json.convocatoria.tiene_categorias == false){
+                tipo_convocatoria="general";
+                $(".sin_categorias").css("display","block");
+                $(".categorias_generales").css("display","none");                
             }
             else
             {
-                //Valido que la convocatorias tenga categorias con el fin de ocultar lo principal            
-                if(json.convocatoria.tiene_categorias == true && json.convocatoria.diferentes_categorias == false){
-                    $(".sin_categorias").css("display","none");
+                //Valido que la convocatorias tenga categorias generales
+                if(json.convocatoria.tiene_categorias == true && json.convocatoria.diferentes_categorias == false){                                 
+                    tipo_convocatoria="general";
+                    $(".categorias_generales").css("display","block");
+                    
+                    if(Object.keys(json.categorias).length>0)
+                    {
+                        
+                        //creo tablas de categorias
+                        var html_table='<table class="table table-hover table-bordered"><thead><tr><th>Nombre</th><th>Fecha(s)</th><th>Descripción</th></tr></thead><tbody>';                    
+                        $.each(json.categorias, function (key, categoria) {
+                            html_table = html_table+'<tr><td>'+categoria.orden+'</td><td>'+categoria.nombre+'</td><td>'+categoria.descripcion+'</td></tr>';                    
+                        });
+                        html_table = html_table+'</tbody></table>';                    
+                        $( ".tablas_categorias_generales" ).append(html_table);                    
+                    }                                        
                 }
                 else
                 {
-                    
+                    //Valido que la convocatorias tenga categorias especiales            
+                    if(json.convocatoria.tiene_categorias == true && json.convocatoria.diferentes_categorias == true){
+                        tipo_convocatoria="especial";
+                        $(".sin_categorias").css("display","none");
+                        $(".categorias_generales").css("display","none");
+                        
+                    }                                        
                 }
-            }    
-            
-            //WILLIAM SE QUEDO EN MOSTRAR LAS CONVOCATORIAS CON CATEGORIAS SIMPLES
-            
-            //Valido que la convocatorias es bolsa
-            if(json.convocatoria.bolsa_concursable == true && json.convocatoria.tiene_categorias == false){
-                $(".es_bolsa_concursable").css("display","block");
             }
-            else
+            
+            if(tipo_convocatoria=="general")
             {
-                $(".es_bolsa_concursable").css("display","none");
-            }
-            
-            //Valido que la convocatorias no tenga categorias            
-            if(json.convocatoria.tiene_categorias == false){
+                $(".sin_categorias").css("display","block");
+                
                 if(Object.keys(json.cronogramas).length>0)
                 {
                     var html_table='<table class="table table-hover table-bordered"><thead><tr><th>Tipo de evento</th><th>Fecha(s)</th><th>Descripción</th></tr></thead><tbody>';                    
@@ -67,105 +84,129 @@ $(document).ready(function () {
                     $( ".tablas_participantes" ).append(html_table);                    
                 }
                 
-                if(Object.keys(json.documentos_administrativos).length>0)
+                if(json.documentos_administrativos != null)
                 {
-                    var html_table='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Requisito</th><th>Descripción</th><th>Tipos de archivos permitidos</th><th>Tamaño máximo permitido</th></tr></thead><tbody>';                    
-                    $.each(json.documentos_administrativos, function (key, documento) {
-                        html_table = html_table+'<tr><td>'+documento.orden+'</td><td>'+documento.requisito+'</td><td>'+documento.descripcion+'</td><td>'+documento.archivos_permitidos+'</td><td>'+documento.tamano_permitido+' MB</td></tr>';                    
-                    });
-                    html_table = html_table+'</tbody></table>';                    
-                    $( ".tablas_documentos_administrativos" ).append(html_table);                    
-                }
+                    if(Object.keys(json.documentos_administrativos).length>0)
+                    {
+                        var html_table='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Requisito</th><th>Descripción</th><th>Tipos de archivos permitidos</th><th>Tamaño máximo permitido</th></tr></thead><tbody>';                    
+                        $.each(json.documentos_administrativos, function (key, documento) {
+                            html_table = html_table+'<tr><td>'+documento.orden+'</td><td>'+documento.requisito+'</td><td>'+documento.descripcion+'</td><td>'+documento.archivos_permitidos+'</td><td>'+documento.tamano_permitido+' MB</td></tr>';                    
+                        });
+                        html_table = html_table+'</tbody></table>';                    
+                        $( ".tablas_documentos_administrativos" ).append(html_table);                    
+                    }
+                }                                    
                 
-                if(Object.keys(json.documentos_tecnicos).length>0)
+                if(json.documentos_tecnicos != null)
                 {
-                    var html_table='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Requisito</th><th>Descripción</th><th>Tipos de archivos permitidos</th><th>Tamaño máximo permitido</th></tr></thead><tbody>';                    
-                    $.each(json.documentos_tecnicos, function (key, documento) {
-                        html_table = html_table+'<tr><td>'+documento.orden+'</td><td>'+documento.requisito+'</td><td>'+documento.descripcion+'</td><td>'+documento.archivos_permitidos+'</td><td>'+documento.tamano_permitido+' MB</td></tr>';                    
-                    });
-                    html_table = html_table+'</tbody></table>';                    
-                    $( ".tablas_documentos_tecnicos" ).append(html_table);                    
+                    if(Object.keys(json.documentos_tecnicos).length>0)
+                    {
+                        var html_table='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Requisito</th><th>Descripción</th><th>Tipos de archivos permitidos</th><th>Tamaño máximo permitido</th></tr></thead><tbody>';                    
+                        $.each(json.documentos_tecnicos, function (key, documento) {
+                            html_table = html_table+'<tr><td>'+documento.orden+'</td><td>'+documento.requisito+'</td><td>'+documento.descripcion+'</td><td>'+documento.archivos_permitidos+'</td><td>'+documento.tamano_permitido+' MB</td></tr>';                    
+                        });
+                        html_table = html_table+'</tbody></table>';                    
+                        $( ".tablas_documentos_tecnicos" ).append(html_table);                    
+                    }
                 }
                 
-                if(Object.keys(json.rondas_evaluacion).length>0)
-                {                      
-                    var html_table = "";
-                    $.each(json.rondas_evaluacion, function (key, ronda) {
-                        html_table = html_table+'<table class="table table-hover table-bordered"><caption>Ronda '+ronda.nombre+'</caption><thead><tr><th>N°</th><th>Criterio</th><th>Puntaje</th></tr></thead><tbody>';                    
-                        html_table = html_table+'<tr><td>xxx</td><td>yyy</td><td>zzz</td></tr>';                    
-                        html_table = html_table+'<tfoot><tr><td colspan="3">'+ronda.descripcion+'</td></tfoot>';
-                        html_table = html_table+'</tbody></table>';                        
-                    });                    
-                    $( ".tablas_criterios_evaluacion" ).append(html_table);                    
-                }
-                
-                if(Object.keys(json.documentacion).length>0)
-                {                      
-                    var html_table_anexo='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Anexo</th><th>Descripción</th></tr></thead><tbody>';                    
-                    var html_table_formato='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Anexo</th><th>Descripción</th></tr></thead><tbody>';                    
-                    var html_table_resolucion='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Anexo</th><th>Descripción</th></tr></thead><tbody>';                    
-                    $.each(json.documentacion, function (key, documento) {
-                        if(documento.tipo_documento == "Anexo")
-                        {
-                            html_table_anexo = html_table_anexo+'<tr><td>'+documento.orden+'</td><td><a href="javascript:void(0)" class="download_file" title="'+documento.id_alfresco+'">'+documento.nombre+'</a></td><td>'+documento.descripcion+'</td></tr>';                    
-                        }                        
-                        if(documento.tipo_documento == "Formato")
-                        {
-                            html_table_formato = html_table_formato+'<tr><td>'+documento.orden+'</td><td><a href="javascript:void(0)" class="download_file" title="'+documento.id_alfresco+'">'+documento.nombre+'</a></td><td>'+documento.descripcion+'</td></tr>';                    
-                        }                        
-                        if(documento.tipo_documento == "Resolución")
-                        {
-                            html_table_resolucion = html_table_resolucion+'<tr><td>'+documento.orden+'</td><td><a href="javascript:void(0)" class="download_file" title="'+documento.id_alfresco+'">'+documento.nombre+'</a></td><td>'+documento.descripcion+'</td></tr>';                    
-                        }                        
-                    });
-                    html_table_anexo = html_table_anexo+'</tbody></table>';                    
-                    html_table_formato = html_table_formato+'</tbody></table>';                    
-                    html_table_resolucion = html_table_resolucion+'</tbody></table>';                    
-                    $( ".documentos_anexos" ).append(html_table_anexo);                                                            
-                    $( ".documentos_formatos" ).append(html_table_formato);                                                            
-                    $( ".documentos_resoluciones" ).append(html_table_resolucion);    
-                    
-                }
-                
-                if(Object.keys(json.listados).length>0)
+                if(json.rondas_evaluacion != null)
                 {
-                    var html_table='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Anexo</th><th>Descripción</th></tr></thead><tbody>';                    
-                    $.each(json.listados, function (key, documento) {
-                            html_table = html_table+'<tr><td>'+documento.orden+'</td><td><a href="javascript:void(0)" class="download_file" title="'+documento.id_alfresco+'">'+documento.nombre+'</a></td><td>'+documento.descripcion+'</td></tr>';                    
-                    });
-                    html_table = html_table+'</tbody></table>';  
-                    $( ".documentos_listados" ).append(html_table);                    
+                    if(Object.keys(json.rondas_evaluacion).length>0)
+                    {                      
+                        var html_table = "";
+                        $.each(json.rondas_evaluacion, function (key, ronda) {
+                            html_table = html_table+'<table class="table table-hover table-bordered"><caption>Ronda '+ronda.nombre+'</caption><thead><tr><th>N°</th><th>Criterio</th><th>Puntaje</th></tr></thead><tbody>';                    
+                            html_table = html_table+'<tr><td>xxx</td><td>yyy</td><td>zzz</td></tr>';                    
+                            html_table = html_table+'<tfoot><tr><td colspan="3">'+ronda.descripcion+'</td></tfoot>';
+                            html_table = html_table+'</tbody></table>';                        
+                        });                    
+                        $( ".tablas_criterios_evaluacion" ).append(html_table);                    
+                    }
                 }
                 
-                if(Object.keys(json.avisos).length>0)
+                if(json.documentacion != null)
                 {
-                    var html_table='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Anexo</th><th>Descripción</th></tr></thead><tbody>';                    
-                    var item_carousel='';                    
-                    var active="active";
-                    $.each(json.avisos, function (key, documento) {
-                            html_table = html_table+'<tr><td>'+documento.orden+'</td><td><a href="javascript:void(0)" class="download_file" title="'+documento.id_alfresco+'">'+documento.nombre+'</a></td><td>'+documento.descripcion+'</td></tr>';                    
-                            if(active=="active")
+                    if(Object.keys(json.documentacion).length>0)
+                    {                      
+                        var html_table_anexo='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Anexo</th><th>Descripción</th></tr></thead><tbody>';                    
+                        var html_table_formato='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Anexo</th><th>Descripción</th></tr></thead><tbody>';                    
+                        var html_table_resolucion='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Anexo</th><th>Descripción</th></tr></thead><tbody>';                    
+                        $.each(json.documentacion, function (key, documento) {
+                            if(documento.tipo_documento == "Anexo")
                             {
-                                item_carousel = item_carousel+'<div class="item active"><h1>'+documento.nombre+'</h1><div>'+documento.descripcion+'</div><p class="text-center"><a href="javascript:void(0)" class="download_file" title="'+documento.id_alfresco+'"><i class="fa fa-file"></i>Descargar</a></p></div>';                                
-                                active="";
-                            }
-                            else
+                                html_table_anexo = html_table_anexo+'<tr><td>'+documento.orden+'</td><td><a href="javascript:void(0)" class="download_file" title="'+documento.id_alfresco+'">'+documento.nombre+'</a></td><td>'+documento.descripcion+'</td></tr>';                    
+                            }                        
+                            if(documento.tipo_documento == "Formato")
                             {
-                                item_carousel = item_carousel+'<div class="item"><h1>'+documento.nombre+'</h1><div>'+documento.descripcion+'</div><p class="text-center"><a href="javascript:void(0)" class="download_file" title="'+documento.id_alfresco+'"><i class="fa fa-file"></i>Descargar</a></p></div>';                                
-                            }
-                    });
-                    html_table = html_table+'</tbody></table>';
-                    
-                    $( ".documentos_avisos" ).append(html_table);                    
-                    $( ".carousel-inner" ).append(item_carousel);                    
+                                html_table_formato = html_table_formato+'<tr><td>'+documento.orden+'</td><td><a href="javascript:void(0)" class="download_file" title="'+documento.id_alfresco+'">'+documento.nombre+'</a></td><td>'+documento.descripcion+'</td></tr>';                    
+                            }                        
+                            if(documento.tipo_documento == "Resolución")
+                            {
+                                html_table_resolucion = html_table_resolucion+'<tr><td>'+documento.orden+'</td><td><a href="javascript:void(0)" class="download_file" title="'+documento.id_alfresco+'">'+documento.nombre+'</a></td><td>'+documento.descripcion+'</td></tr>';                    
+                            }                        
+                        });
+                        html_table_anexo = html_table_anexo+'</tbody></table>';                    
+                        html_table_formato = html_table_formato+'</tbody></table>';                    
+                        html_table_resolucion = html_table_resolucion+'</tbody></table>';                    
+                        $( ".documentos_anexos" ).append(html_table_anexo);                                                            
+                        $( ".documentos_formatos" ).append(html_table_formato);                                                            
+                        $( ".documentos_resoluciones" ).append(html_table_resolucion);    
+
+                    }
                 }
                 
-                download_file();
+                if(json.listados != null)
+                {
+                    if(Object.keys(json.listados).length>0)
+                    {
+                        var html_table='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Anexo</th><th>Descripción</th></tr></thead><tbody>';                    
+                        $.each(json.listados, function (key, documento) {
+                                html_table = html_table+'<tr><td>'+documento.orden+'</td><td><a href="javascript:void(0)" class="download_file" title="'+documento.id_alfresco+'">'+documento.nombre+'</a></td><td>'+documento.descripcion+'</td></tr>';                    
+                        });
+                        html_table = html_table+'</tbody></table>';  
+                        $( ".documentos_listados" ).append(html_table);                    
+                    }
+                }
+                
+                if(json.listados != null)
+                {
+                    if(Object.keys(json.avisos).length>0)
+                    {
+                        var html_table='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Anexo</th><th>Descripción</th></tr></thead><tbody>';                    
+                        var item_carousel='';                    
+                        var active="active";
+                        $.each(json.avisos, function (key, documento) {
+                                html_table = html_table+'<tr><td>'+documento.orden+'</td><td><a href="javascript:void(0)" class="download_file" title="'+documento.id_alfresco+'">'+documento.nombre+'</a></td><td>'+documento.descripcion+'</td></tr>';                    
+                                if(active=="active")
+                                {
+                                    item_carousel = item_carousel+'<div class="item active"><h1>'+documento.nombre+'</h1><div>'+documento.descripcion+'</div><p class="text-center"><a href="javascript:void(0)" class="download_file" title="'+documento.id_alfresco+'"><i class="fa fa-file"></i>Descargar</a></p></div>';                                
+                                    active="";
+                                }
+                                else
+                                {
+                                    item_carousel = item_carousel+'<div class="item"><h1>'+documento.nombre+'</h1><div>'+documento.descripcion+'</div><p class="text-center"><a href="javascript:void(0)" class="download_file" title="'+documento.id_alfresco+'"><i class="fa fa-file"></i>Descargar</a></p></div>';                                
+                                }
+                        });
+                        html_table = html_table+'</tbody></table>';
+
+                        $( ".documentos_avisos" ).append(html_table);                    
+                        $( ".carousel-inner" ).append(item_carousel);                    
+                    }
+                }
+                                
+                //Valido que la convocatorias es bolsa
+                if(json.convocatoria.bolsa_concursable == true){
+                    $(".es_bolsa_concursable").css("display","block");
+                }
+                else
+                {
+                    $(".es_bolsa_concursable").css("display","none");
+                }
             }
-            
-            
-            
-            
+                                                
+            download_file();
+                
             $('#view_convocatoria').loadJSON(json.convocatoria);
         }
     });
