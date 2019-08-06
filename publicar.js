@@ -28,6 +28,21 @@ $(document).ready(function () {
                 tipo_convocatoria="general";
                 $(".sin_categorias").css("display","block");
                 $(".categorias_generales").css("display","none");                
+                
+                //Listados de la convocatoria general
+                if(json.listados != null)
+                {
+                    if(Object.keys(json.listados).length>0)
+                    {
+                        var html_table='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Documento</th><th>Descripción</th></tr></thead><tbody>';                    
+                        $.each(json.listados, function (key, documento) {
+                                html_table = html_table+'<tr><td>'+documento.orden+'</td><td><a href="javascript:void(0)" class="download_file" title="'+documento.id_alfresco+'">'+documento.nombre+'</a></td><td>'+documento.descripcion+'</td></tr>';                    
+                        });
+                        html_table = html_table+'</tbody></table>';  
+                        $( ".documentos_listados" ).append(html_table);                    
+                    }
+                }
+                                
             }
             else
             {
@@ -36,6 +51,7 @@ $(document).ready(function () {
                     tipo_convocatoria="general";
                     $(".categorias_generales").css("display","block");
                     
+                    //categorias de la convocatoria
                     if(Object.keys(json.categorias).length>0)
                     {
                         $(".tablas_categorias_generales").css("display","block");                        
@@ -47,6 +63,39 @@ $(document).ready(function () {
                         html_table = html_table+'</tbody></table>';                    
                         $( ".tablas_categorias_generales" ).append(html_table);                    
                     }                                        
+                    
+                    if(json.rondas_evaluacion != null)
+                    {
+                        if(Object.keys(json.rondas_evaluacion).length>0)
+                        {                      
+                            var html_table = "";
+                            $.each(json.rondas_evaluacion, function (key, ronda) {
+                                html_table = html_table+'<table class="table table-hover table-bordered"><caption>'+ronda.nombre+'</caption><thead><tr><th>N°</th><th>Criterio</th><th>Puntaje</th></tr></thead><tbody>';                    
+                                html_table = html_table+'<tr><td>xxx</td><td>yyy</td><td>zzz</td></tr>';                    
+                                html_table = html_table+'<tfoot><tr><td colspan="3">'+ronda.descripcion+'</td></tfoot>';
+                                html_table = html_table+'</tbody></table>';                        
+                            });                    
+                            $( ".tablas_criterios_evaluacion" ).append(html_table);                    
+                        }
+                    }
+                    
+                    //Listados de la convocatoria general con categorias
+                    if(json.listados != null)
+                    {
+                        if(Object.keys(json.listados).length>0)
+                        {
+                            var html_table = "";
+                            $.each(json.listados, function (key, documento) {
+                                html_table = html_table+'<table class="table table-hover table-bordered"><caption>'+documento.nombre+'</caption><thead><tr><th>N°</th><th>Documento</th><th>Descripción</th></tr></thead><tbody>';                    
+                                $.each(documento.listados, function (key, listado) {
+                                        html_table = html_table+'<tr><td>'+listado.orden+'</td><td><a href="javascript:void(0)" class="download_file" title="'+listado.id_alfresco+'">'+listado.nombre+'</a></td><td>'+listado.descripcion+'</td></tr>';                    
+                                });                                
+                                html_table = html_table+'</tbody></table>';                        
+                            });                             
+                            $( ".documentos_listados" ).append(html_table);                    
+                        }
+                    }
+                    
                 }
                 else
                 {
@@ -129,9 +178,9 @@ $(document).ready(function () {
                 {
                     if(Object.keys(json.documentacion).length>0)
                     {                      
-                        var html_table_anexo='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Anexo</th><th>Descripción</th></tr></thead><tbody>';                    
-                        var html_table_formato='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Anexo</th><th>Descripción</th></tr></thead><tbody>';                    
-                        var html_table_resolucion='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Anexo</th><th>Descripción</th></tr></thead><tbody>';                    
+                        var html_table_anexo='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Documento</th><th>Descripción</th></tr></thead><tbody>';                    
+                        var html_table_formato='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Documento</th><th>Descripción</th></tr></thead><tbody>';                    
+                        var html_table_resolucion='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Documento</th><th>Descripción</th></tr></thead><tbody>';                    
                         $.each(json.documentacion, function (key, documento) {
                             if(documento.tipo_documento == "Anexo")
                             {
@@ -158,22 +207,9 @@ $(document).ready(function () {
                 
                 if(json.listados != null)
                 {
-                    if(Object.keys(json.listados).length>0)
-                    {
-                        var html_table='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Anexo</th><th>Descripción</th></tr></thead><tbody>';                    
-                        $.each(json.listados, function (key, documento) {
-                                html_table = html_table+'<tr><td>'+documento.orden+'</td><td><a href="javascript:void(0)" class="download_file" title="'+documento.id_alfresco+'">'+documento.nombre+'</a></td><td>'+documento.descripcion+'</td></tr>';                    
-                        });
-                        html_table = html_table+'</tbody></table>';  
-                        $( ".documentos_listados" ).append(html_table);                    
-                    }
-                }
-                
-                if(json.listados != null)
-                {
                     if(Object.keys(json.avisos).length>0)
                     {
-                        var html_table='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Anexo</th><th>Descripción</th></tr></thead><tbody>';                    
+                        var html_table='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Documento</th><th>Descripción</th></tr></thead><tbody>';                    
                         var item_carousel='';                    
                         var active="active";
                         $.each(json.avisos, function (key, documento) {
