@@ -73,6 +73,44 @@ and open the template in the editor.
     color: #ffffff;  
 }
 
+.footer-fran-azul{
+    background-color: #009FE3;
+    display: block; 
+    
+}
+
+.footer-fran-azul *{
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.footer-fran-azul h4{
+    font-size: 18px;
+}
+
+.footer-fran-azul-oscuro{
+    background-color:#003E65;    
+}
+
+.footer-fran-azul-oscuro *{
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.footer-scrd *{
+    font-size: 10px !important;
+}
+
+.footer-scrd div{
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sup-fran-banner-imagen img{
+    width: 100%;
+}
+
 .col-menu-left{
     background-color: #b5b5b5;
 }
@@ -175,4 +213,88 @@ and open the template in the editor.
 
 .tablas_categorias_generales{
     display: none;
+}
+
+.span_Creada{
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    width: 102px !important;
+    text-align: center;
+}
+
+.span_Visto{
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #2e6da4;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    width: 102px !important;
+    text-align: center;
+}
+
+.span_Verificada{
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #2e6da4;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    width: 102px !important;
+    text-align: center;
+}
+
+.span_Aprobada{
+    color: #31708f;
+    background-color: #bce8f1;
+    border-color: #2e6da4;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    width: 102px !important;
+    text-align: center;
+}
+
+.span_Publicada{
+    color: #ffffff;
+    background-color: #d9534f;
+    border-color: #2e6da4;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    width: 102px !important;
+    text-align: center;
+}
+
+.span_Adjudicada{
+    color: #8a6d3b;
+    background-color: #faebcc;
+    border-color: #faebcc;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    width: 102px !important;
+    text-align: center;
 }

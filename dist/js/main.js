@@ -39,7 +39,7 @@ function form_edit_page(page,id)
         url=url_pv_site+"publicar";
         name="_blank";
     }
-    window.open(url+".html?id=" + id, name);
+    location.href=url+".html?id=" + id;
 }
 
 /* Función para cargar alertas */
