@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     //Realizo la peticion para cargar el formulario
     $.ajax({
-        type: 'GET',        
+        type: 'GET',
         url: url_pv + 'ConvocatoriasWS/search_convocatorias'
     }).done(function (data) {
         if (data == 'error_metodo')
@@ -62,13 +62,12 @@ $(document).ready(function () {
                         $("#programa").append('<option value="' + programa.id + '" >' + programa.nombre + '</option>');
                     });
                 }
-                
-                $("#estado").append('<option value="">:: Seleccionar ::</option>');
-                if (json.estados.length > 0) {
-                    $.each(json.estados, function (key, estado) {
-                        $("#estado").append('<option value="' + estado.id + '" >' + estado.nombre + '</option>');
-                    });
-                }                
+
+                $("#estado").append('<option value="">:: Seleccionar ::</option>');                
+                $("#estado").append('<option value="5">Publicada</option>');                
+                $("#estado").append('<option value="51">Abierta</option>');                
+                $("#estado").append('<option value="52">Cerrada</option>');                
+                $("#estado").append('<option value="6">Adjudicada</option>');                
 
             }
         }
@@ -99,6 +98,9 @@ $(document).ready(function () {
                 d.params = JSON.stringify(params);
             },
         },
+        "drawCallback": function (settings) {
+            cargar_cronograma();
+        },
         "columns": [
             {"data": "estado_convocatoria"},
             {"data": "anio"},
@@ -109,6 +111,7 @@ $(document).ready(function () {
             {"data": "enfoque"},
             {"data": "convocatoria"},
             {"data": "categoria"},
+            {"data": "ver_cronograma"},
             {"data": "ver_convocatoria"},
         ]
     });
@@ -136,7 +139,7 @@ $(document).ready(function () {
     $('#programa').change(function () {
         dataTable.draw();
     });
-    
+
     $('#estado').change(function () {
         dataTable.draw();
     });
@@ -154,4 +157,36 @@ $(document).ready(function () {
         }
     });
 
-}); 
+
+});
+
+function cargar_cronograma()
+{
+    $(".cargar_cronograma").click(function () {
+        var title = $(this).attr("title");
+
+        //Realizo la peticion para cargar el formulario
+        $.ajax({
+            type: 'POST',            
+            url: url_pv + 'ConvocatoriasWS/cargar_cronograma/'+title
+        }).done(function (data) {
+            if (data == 'error_metodo')
+            {
+                notify("danger", "ok", "Convocatorias:", "Se registro un error en el método, comuníquese con la mesa de ayuda soporte.convocatorias@scrd.gov.co");
+            } else
+            {
+                var json = JSON.parse(data);               
+                var html_table='';    
+                $( "#table_cronogramas" ).html(html_table);
+                html_table = html_table+'<table class="table table-hover table-bordered"><thead><tr><th>Tipo de evento</th><th>Fecha(s)</th><th>Descripción</th></tr></thead><tbody>';                    
+                $.each(json, function (key2, evento) {                     
+                    html_table = html_table+'<tr><td>'+evento.tipo_evento+'</td><td>'+evento.fecha+'</td><td>'+evento.descripcion+'</td></tr>';                                                    
+                });
+                html_table = html_table+'</tbody></table>';                        
+                
+                $( "#table_cronogramas" ).html(html_table);
+                
+            }
+        });
+    });
+}
