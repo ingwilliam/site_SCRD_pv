@@ -38,7 +38,7 @@
                 <li class="nav-item"><a  href="/convocatorias/" style="color: white;">Inicio </a></li>
                 <li class="nav-item"><a  href="https://convocatorias.scrd.gov.co/estimulos/estimulos/login.xhtml" style="color: white;">Iniciar sesión </a></li>
                 <li class="nav-item"><a  href="/convocatorias/historicos" style="color: white;">Históricos</a></li>
-                <li class="nav-item"><a href="#" lass="nav-link secion" style="color: white;">Ayuda</a></li>
+                <li class="nav-item"><a href="#" style="color: white;">Ayuda</a></li>
             </ul>            
         </div>
         <div class="sup-fran-banner clearfix">
@@ -51,7 +51,7 @@
                         <div class="descripcion"></div>
                         <br/>
                         <button type="button" class="btn btn-default sup-fran-banner-button">Visualizar contenido limpio de la convocatoria</button>                                                                    
-                        <button type="button" class="btn btn-primary sup-fran-banner-button" style="margin-right: 10px;">Participar</button>
+                        <button type="button" class="btn btn-primary sup-fran-banner-button" style="margin-right: 10px;" onclick="window.open(url_pv_admin, '_blank');">Participar</button>
                         <br/><br/>
                     </div>
                 </div>
@@ -96,10 +96,10 @@
                     <br/>
                     <div class="row">  
                         <div class="col-lg-6">
-                            <button type="button" class="btn btn-primary">Solicitar Usuario</button>
+                            <button type="button" class="btn btn-primary" onclick="window.open(url_pv_admin+'solicitar_usuarios.html', '_blank');">Solicitar Usuario</button>
                         </div>
                         <div class="col-lg-6">
-                            <button type="button" class="btn btn-primary">Ya tengo usuario</button>
+                            <button type="button" class="btn btn-primary" onclick="window.open(url_pv_admin, '_blank');">Ya tengo usuario</button>
                         </div>                                                
                     </div>
                     <br/>
@@ -108,10 +108,10 @@
                     <br/>
                     <div class="row button-center">  
                         <div class="col-lg-6">
-                            <button type="button" class="btn btn-primary">Ver condiciones</button>
+                            <button type="button" class="btn btn-primary condiciones_participacion_link">Ver condiciones</button>
                         </div>
                         <div class="col-lg-6">
-                            <button type="button" class="btn btn-primary">Buscar convocatorias</button>
+                            <button type="button" onclick="location.href='convocatorias.html'" class="btn btn-primary">Buscar convocatorias</button>
                         </div>                                                
                     </div>
                 </div>
@@ -124,7 +124,7 @@
                             <div class="subtitulos2 convocatoria"></div>
                         </div>
                         <div class="col-lg-12">
-                            <div class="subtitulos3"><a class="condiciones" href="">Le recomendamos leer las condiciones generales de participación del PDE <span class="fa fa-angle-double-right"></span></a></div>
+                            <div class="subtitulos3"><a class="condiciones_participacion_link" href="javascript:void(0)">Le recomendamos leer las condiciones generales de participación del PDE <span class="fa fa-angle-double-right"></span></a></div>
                         </div>                        
                         <div class="col-lg-12">
                             <div class="subtitulos4">Información básica</div>

@@ -1,4 +1,11 @@
-//WILLIAM SE QUEDO EN MOSTRAR RONDAS EN LAS CATEGORIAS GENERALES
+//Definimos las variables del sitio
+var url_pv = "http://localhost/crud_SCRD_pv/api/";
+var url_pv_admin = "http://localhost/admin_SCRD_pv/";
+var url_pv_site = "http://localhost/site_SCRD_pv/";
+var url_pv_report = "http://localhost/report_SCRD_pv/";
+
+//
+////WILLIAM SE QUEDO EN MOSTRAR RONDAS EN LAS CATEGORIAS GENERALES
 //HABLE CON CESAR SOBRE EL FUNCIONAMIENTO DEL FORMULARIO DE CRAER RONDAS
 
 $(document).ready(function () {
@@ -419,6 +426,11 @@ $(document).ready(function () {
                 json.convocatoria.descripcion = json.convocatoria.descripcion.substr(0,420);
                 $("#descripcion_larga_div").css("display","block");
             }            
+            
+            
+            $(".condiciones_participacion_link").click(function () {       
+                window.open(json.convocatoria.condiciones_participacion, '_blank');
+            });
             
             $('#view_convocatoria').loadJSON(json.convocatoria);
         }
