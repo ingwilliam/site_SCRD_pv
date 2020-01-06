@@ -1,13 +1,3 @@
-//Definimos las variables del sitio
-var url_pv = "http://localhost/crud_SCRD_pv/api/";
-var url_pv_admin = "http://localhost/admin_SCRD_pv/";
-var url_pv_site = "http://localhost/site_SCRD_pv/";
-var url_pv_report = "http://localhost/report_SCRD_pv/";
-
-//
-////WILLIAM SE QUEDO EN MOSTRAR RONDAS EN LAS CATEGORIAS GENERALES
-//HABLE CON CESAR SOBRE EL FUNCIONAMIENTO DEL FORMULARIO DE CRAER RONDAS
-
 $(document).ready(function () {
 
     //Validar si el navegador soporta localStorage, si no lo soporta lo envia directamente a la pagina de error
@@ -49,6 +39,27 @@ $(document).ready(function () {
                         $( ".documentos_listados" ).append(html_table);                    
                     }
                 }
+                
+                //Rondas de evaluacion por simples
+                if(json.rondas_evaluacion != null)
+                {
+                    if(Object.keys(json.rondas_evaluacion).length>0)
+                    {                      
+                        var html_table = "";
+                        $.each(json.rondas_evaluacion, function (key, ronda) {
+                            html_table = html_table+'<table class="table table-hover table-bordered"><caption>'+ronda.nombre+'</caption><thead><tr><th>N°</th><th>Criterio</th><th>Puntaje</th></tr></thead><tbody>';                    
+                            if(Object.keys(ronda.criterios).length>0)
+                            {
+                                $.each(ronda.criterios, function (key2, criterio) {
+                                 html_table = html_table+'<tr><td>'+criterio.orden+'</td><td>'+criterio.descripcion_criterio+'</td><td>'+criterio.puntaje_minimo+' al '+criterio.puntaje_maximo+'</td></tr>';                          
+                                });                             
+                            }                            
+                            html_table = html_table+'<tfoot><tr><td colspan="3">'+ronda.descripcion+'</td></tfoot>';
+                            html_table = html_table+'</tbody></table>';                                                    
+                        });                    
+                        $( ".tablas_criterios_evaluacion" ).append(html_table);                    
+                    }
+                }
                                 
             }
             else
@@ -71,21 +82,6 @@ $(document).ready(function () {
                         $( ".tablas_categorias_generales" ).append(html_table);                    
                     }                                        
                     
-                    if(json.rondas_evaluacion != null)
-                    {
-                        if(Object.keys(json.rondas_evaluacion).length>0)
-                        {                      
-                            var html_table = "";
-                            $.each(json.rondas_evaluacion, function (key, ronda) {
-                                html_table = html_table+'<table class="table table-hover table-bordered"><caption>'+ronda.nombre+'</caption><thead><tr><th>N°</th><th>Criterio</th><th>Puntaje</th></tr></thead><tbody>';                    
-                                html_table = html_table+'<tr><td>xxx</td><td>yyy</td><td>zzz</td></tr>';                    
-                                html_table = html_table+'<tfoot><tr><td colspan="3">'+ronda.descripcion+'</td></tfoot>';
-                                html_table = html_table+'</tbody></table>';                        
-                            });                    
-                            $( ".tablas_criterios_evaluacion" ).append(html_table);                    
-                        }
-                    }
-                    
                     //Listados de la convocatoria general con categorias
                     if(json.listados != null)
                     {
@@ -100,6 +96,27 @@ $(document).ready(function () {
                                 html_table = html_table+'</tbody></table>';                        
                             });                             
                             $( ".documentos_listados" ).append(html_table);                    
+                        }
+                    }
+                    
+                    //Rondas de evaluacion por categorias simples
+                    if(json.rondas_evaluacion != null)
+                    {
+                        if(Object.keys(json.rondas_evaluacion).length>0)
+                        {                      
+                            var html_table = "";
+                            $.each(json.rondas_evaluacion, function (key, ronda) {
+                                html_table = html_table+'<table class="table table-hover table-bordered"><caption>'+ronda.nombre+'</caption><thead><tr><th>N°</th><th>Criterio</th><th>Puntaje</th></tr></thead><tbody>';                    
+                                if(Object.keys(ronda.criterios).length>0)
+                                {
+                                    $.each(ronda.criterios, function (key2, criterio) {
+                                     html_table = html_table+'<tr><td>'+criterio.orden+'</td><td>'+criterio.descripcion_criterio+'</td><td>'+criterio.puntaje_minimo+' al '+criterio.puntaje_maximo+'</td></tr>';                          
+                                    });                             
+                                }                            
+                                html_table = html_table+'<tfoot><tr><td colspan="3">'+ronda.descripcion+'</td></tfoot>';
+                                html_table = html_table+'</tbody></table>';                                                    
+                            });                    
+                            $( ".tablas_criterios_evaluacion" ).append(html_table);                    
                         }
                     }
                     
@@ -216,22 +233,6 @@ $(document).ready(function () {
                             }
                         }
                         
-                        //Rondas de evaluacion por categoria
-                        if(json.rondas_evaluacion != null)
-                        {
-                            if(Object.keys(json.rondas_evaluacion).length>0)
-                            {                      
-                                var html_table = "";
-                                $.each(json.rondas_evaluacion, function (key, ronda) {
-                                    html_table = html_table+'<table class="table table-hover table-bordered"><caption>'+ronda.nombre+'</caption><thead><tr><th>N°</th><th>Criterio</th><th>Puntaje</th></tr></thead><tbody>';                    
-                                    html_table = html_table+'<tr><td>xxx</td><td>yyy</td><td>zzz</td></tr>';                    
-                                    html_table = html_table+'<tfoot><tr><td colspan="3">'+ronda.descripcion+'</td></tfoot>';
-                                    html_table = html_table+'</tbody></table>';                        
-                                });                    
-                                $( ".tablas_criterios_evaluacion" ).append(html_table);                    
-                            }
-                        }
-                        
                         //Listados de la convocatoria general con categorias
                         if(json.listados != null)
                         {
@@ -276,6 +277,27 @@ $(document).ready(function () {
                                 
                                 $( ".documentos_avisos" ).append(html_table);                    
                                 $( ".carousel-inner" ).append(item_carousel);                    
+                            }
+                        }
+                        
+                        //Rondas de evaluacion por categorias simples
+                        if(json.rondas_evaluacion != null)
+                        {
+                            if(Object.keys(json.rondas_evaluacion).length>0)
+                            {                      
+                                var html_table = "";
+                                $.each(json.rondas_evaluacion, function (key, ronda) {
+                                    html_table = html_table+'<table class="table table-hover table-bordered"><caption>'+ronda.nombre+'</caption><thead><tr><th>N°</th><th>Criterio</th><th>Puntaje</th></tr></thead><tbody>';                    
+                                    if(Object.keys(ronda.criterios).length>0)
+                                    {
+                                        $.each(ronda.criterios, function (key2, criterio) {
+                                         html_table = html_table+'<tr><td>'+criterio.orden+'</td><td>'+criterio.descripcion_criterio+'</td><td>'+criterio.puntaje_minimo+' al '+criterio.puntaje_maximo+'</td></tr>';                          
+                                        });                             
+                                    }                            
+                                    html_table = html_table+'<tfoot><tr><td colspan="3">'+ronda.descripcion+'</td></tfoot>';
+                                    html_table = html_table+'</tbody></table>';                                                    
+                                });                    
+                                $( ".tablas_criterios_evaluacion" ).append(html_table);                    
                             }
                         }
                         
@@ -332,21 +354,6 @@ $(document).ready(function () {
                         });
                         html_table = html_table+'</tbody></table>';                    
                         $( ".tablas_documentos_tecnicos" ).append(html_table);                    
-                    }
-                }
-                
-                if(json.rondas_evaluacion != null)
-                {
-                    if(Object.keys(json.rondas_evaluacion).length>0)
-                    {                      
-                        var html_table = "";
-                        $.each(json.rondas_evaluacion, function (key, ronda) {
-                            html_table = html_table+'<table class="table table-hover table-bordered"><caption>'+ronda.nombre+'</caption><thead><tr><th>N°</th><th>Criterio</th><th>Puntaje</th></tr></thead><tbody>';                    
-                            html_table = html_table+'<tr><td>xxx</td><td>yyy</td><td>zzz</td></tr>';                    
-                            html_table = html_table+'<tfoot><tr><td colspan="3">'+ronda.descripcion+'</td></tfoot>';
-                            html_table = html_table+'</tbody></table>';                        
-                        });                    
-                        $( ".tablas_criterios_evaluacion" ).append(html_table);                    
                     }
                 }
                 
