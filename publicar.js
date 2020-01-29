@@ -438,6 +438,12 @@ $(document).ready(function () {
             $(".condiciones_participacion_link").click(function () {       
                 window.open(json.convocatoria.condiciones_participacion, '_blank');
             });
+                        
+            if(json.convocatoria.numero_estimulos === null)
+            {                
+                $(".div_numero_estimulos").css("display","none");
+            }
+            
             
             $('#view_convocatoria').loadJSON(json.convocatoria);
         }
