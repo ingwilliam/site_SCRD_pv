@@ -17,6 +17,23 @@ $(document).ready(function () {
         {            
             var json = JSON.parse(data);
             
+            var siglas_programas="";
+            if(json.convocatoria.id_programa==1)
+            {
+                siglas_programas="PDE";
+            }
+            if(json.convocatoria.id_programa==2)
+            {
+                siglas_programas="PDAC";
+            }
+            if(json.convocatoria.id_programa==3)
+            {
+                siglas_programas="PDSC";
+            }
+            
+            $(".siglas_programas").html(siglas_programas);
+            $(".nombre_programas").html(json.convocatoria.programa);
+            
             //verifica si la bolsa aplica para convocatorias sin categorias y convocatorias con categorias generales
             var tipo_convocatoria="";            
                         
