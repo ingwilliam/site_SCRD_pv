@@ -1,0 +1,370 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 3/07/2019, 10:55:24 AM
+    Author     : willy
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700&display=swap');
+
+*
+{
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    background-color: #FFF;
+}
+
+.sup-fran-color 
+{
+    background-color: #62388E;
+    display: block;
+    height: 50px;
+    vertical-align: middle;
+}
+.sup-menu a
+{
+    color: white;      
+}
+.sup-menu{
+    float: right;
+    margin: 0px;
+    list-style: none;   
+}
+
+.sup-menu li
+{
+    width: 130px;
+    float: left;
+    text-align: center;
+    padding: 15px;
+}
+.sup-menu li:hover
+{
+background-color: #8453b7;
+}
+.sup-menu li a{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.sup-fran-banner {
+    background-image: url('cabezote-convocatorias-principal.jpg');
+    background-size: 100%;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;    
+}
+
+.sup-fran-banner-nombre{
+    background-color: #ffffffa6;
+    border-radius: 9px 9px 9px 9px;
+    -moz-border-radius: 9px 9px 9px 9px;
+    -webkit-border-radius: 9px 9px 9px 9px;
+    border: 0px solid #000000;
+    height: auto;
+    padding: 10px 20px 0 20px;
+    width: 60%;
+    height: 190px;
+    margin: 20px 0px;
+    
+}
+
+.sup-fran-banner-button{
+    float: right;
+    margin: 5px 0 5px 0;
+    
+}
+
+.med-fran-verde{
+    background-color: #00888b;
+    display: block; 
+    
+}
+
+.med-fran-verde ul{
+    list-style: none;  
+    margin: 5px 0 5px 0;
+}
+
+.med-fran-verde ul li a{
+    color: #ffffff;  
+}
+.contenedor-centro
+{
+    padding-top: 20px;
+    background-color: #FFF;
+}
+.contenedor-izquierdo
+{       
+    background-color: #d2afec;
+    padding-left: 0px;
+    height: 110%;
+    padding-bottom: 20px;
+
+}
+.contenedor-izquierdo li
+{
+    padding: 5px 10px;
+}
+.contenedor-izquierdo li.active
+{
+    background-color: #baa0ce;
+}
+
+
+.contenedor-izquierdo a
+{
+    color: #3c3c3c;
+}
+
+.contenedor-izquierdo h2
+{
+    background-color: #5D4293;
+    padding: 10px 20px;  
+    color: #FFF;
+}
+
+.contenedor-izquierdo h3
+{
+    background-color: #5D4293;
+    padding: 10px 20px;  
+    color: #FFF;
+}
+
+.contenedor-izquierdo h2 a
+{
+    color: #FFF;
+}
+.contenedor-derecho
+{
+    padding: 0;
+    background-image: url(silueta-danza.jpg) !important;
+    background-repeat: repeat-y !important;
+    background-size: 100% !important;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -99;
+}
+
+
+.footer-fran-color-claro{
+    background-color: #6c539d;
+    display: block; 
+    padding: 20px;
+    
+}
+
+.footer-fran-color-claro *{
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.footer-fran-color-claro h4{
+    font-size: 18px;
+}
+
+.footer-fran-color-oscuro{
+    background-color:#5D4299;    
+    padding: 20px;
+}
+
+.footer-fran-color-oscuro *{
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.footer-scrd *{
+    font-size: 10px !important;
+}
+
+.footer-scrd div{
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sup-fran-banner-imagen img{
+    width: 100%;
+}
+
+.col-menu-left{
+    background-color: #b5b5b5;
+}
+
+.col-menu-left .anclas{
+    list-style: none;   
+}
+
+.col-menu-left .anclas li a{
+    color: white;
+}
+
+.col-menu-left button{       
+    font-size: 13px !important;
+}
+
+.col-menu-left .button-center button{       
+    font-size: 10px !important;
+}
+
+
+.subtitulos{
+    width: 100%;    
+    color: #ffffff;
+    font-size: 1.1em;
+    padding: 1px 0px 5px 10px;
+    background: #ca0067;
+    margin-bottom: 5px;
+    letter-spacing: 1.3pt;
+    margin-top: 1rem !important;
+}
+
+.subtitulos2{
+    width: 100%;    
+    color: #ffffff;
+    font-size: 2em;
+    padding: 10px 0;
+    background: #FC9400;    
+    letter-spacing: 1.3pt;
+    margin-top: 1rem !important;
+    text-align: center;
+    font-weight: bold;
+}
+
+.subtitulos3{
+    width: 100%;    
+    color: #ffffff;
+    font-size: 1.1em;
+    padding: 1px 0px 5px 10px;
+    background: #009FE3;
+    margin-bottom: 5px;
+    letter-spacing: 1.3pt;
+    margin-top: 1rem !important;
+    text-align: center;
+}
+
+.subtitulos3 a{
+    color: #ffffff;    
+}
+
+.subtitulos4{
+    width: 100%;    
+    color: #ffffff;
+    font-size: 1.1em;
+    padding: 1px 0px 5px 10px;
+    background: #009FE3;
+    margin-bottom: 5px;
+    letter-spacing: 1.3pt;
+    margin-top: 1rem !important;  
+    font-weight: bold;
+}
+
+.item{
+    height: 210px !important;
+}
+
+.item a{
+
+}
+
+.item h1{
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.item div{
+    text-align: justify;   
+    padding: 0 35px 0 35px;
+    height: 120px;
+}
+
+.sin_categorias{
+    display: none;
+}
+
+.categorias_generales{
+    display: none;
+}
+
+.tablas_categorias_generales{
+    display: none;
+}
+
+.span_Publicada{
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    width: 102px !important;
+    text-align: center;
+}
+
+.span_Abierta{
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #2e6da4;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    width: 102px !important;
+    text-align: center;
+}
+
+.span_Adjudicada{
+    color: #31708f;
+    background-color: #bce8f1;
+    border-color: #2e6da4;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    width: 102px !important;
+    text-align: center;
+}
+
+.span_Cerrada{
+    color: #ffffff;
+    background-color: #d9534f;
+    border-color: #2e6da4;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    width: 102px !important;
+    text-align: center;
+}
+
+#table_list_paginate ul{
+    margin: 0 !important;
+}
+
+#accordion .panel{
+    background-color: transparent !important;    
+    border: none !important;
+    -webkit-box-shadow:none !important;
+    box-shadow:none !important;
+}
