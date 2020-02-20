@@ -146,8 +146,7 @@ background-color: #8453b7;
 }
 .contenedor-derecho
 {
-    padding: 0;
-    background-image: url(silueta-danza.jpg) !important;
+    padding: 0;    
     background-repeat: repeat-y !important;
     background-size: 100% !important;
     position: fixed;

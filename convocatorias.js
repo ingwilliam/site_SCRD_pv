@@ -10,12 +10,14 @@ $(document).ready(function () {
     var p_enfoque = getURLParameter("e");
     
     var imagen_principal="convocatorias_files/cabezote-convocatorias-principal.jpg";
+    var silueta_principal="convocatorias_files/silueta-convocarorias-general.jpg";
     
     $("#iniciar_sesion").attr("href",url_pv_admin);
 
     if (typeof p_area !== 'undefined') {
         $(".panel_areas").addClass("in");
         imagen_principal="convocatorias_files/cabezote-area-"+p_area+".jpg";
+        silueta_principal="convocatorias_files/silueta-convocarorias-"+p_area+".jpg";
     }
 
     if (typeof p_entidad !== 'undefined') {
@@ -34,6 +36,8 @@ $(document).ready(function () {
     }
 
     $("#imagen_principal").attr("src",imagen_principal);
+    
+    $(".contenedor-derecho").css("background-image","url("+silueta_principal+")");
 
     //Realizo la peticion para cargar el formulario
     $.ajax({
