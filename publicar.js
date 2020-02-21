@@ -3,7 +3,8 @@ $(document).ready(function () {
     //Validar si el navegador soporta localStorage, si no lo soporta lo envia directamente a la pagina de error
     issetLocalStorage();
 
-
+    $("#iniciar_sesion").attr("href",url_pv_admin);
+    
     //Realizo la peticion para cargar el formulario
     $.ajax({
         type: 'POST',        
@@ -451,13 +452,12 @@ $(document).ready(function () {
                 json.convocatoria.descripcion = json.convocatoria.descripcion.substr(0,420);
                 $("#descripcion_larga_div").css("display","block");
             }            
-            
-            
+                        
             $(".condiciones_participacion_link").click(function () {       
                 window.open(json.convocatoria.condiciones_participacion, '_blank');
             });
-                        
-            if(json.convocatoria.numero_estimulos === null)
+                                    
+            if(json.convocatoria.numero_estimulos === null || json.convocatoria.numero_estimulos == 0)
             {                
                 $(".div_numero_estimulos").css("display","none");
             }
