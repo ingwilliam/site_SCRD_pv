@@ -443,9 +443,7 @@ $(document).ready(function () {
 
                 }
             }
-            
-                                                
-            download_file();
+                                                                        
             if(json.convocatoria.descripcion.length>=423)
             {
                 json.convocatoria.descripcion_larga= json.convocatoria.descripcion;
@@ -464,6 +462,9 @@ $(document).ready(function () {
             
             
             $('#view_convocatoria').loadJSON(json.convocatoria);
+            
+            download_file();
+            
         }
     });
 
