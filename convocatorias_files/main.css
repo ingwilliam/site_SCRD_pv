@@ -219,22 +219,23 @@ background-color: #8453b7;
 
 
 .subtitulos{
-    width: 100%;    
+    width: 100%;
     color: #ffffff;
     font-size: 1.1em;
-    padding: 1px 0px 5px 10px;
-    background: #ca0067;
+    padding: 5px 0px 5px 10px;
+    background: #8fa594;
     margin-bottom: 5px;
     letter-spacing: 1.3pt;
     margin-top: 1rem !important;
+
 }
 
 .subtitulos2{
-    width: 100%;    
-    color: #ffffff;
+    width: 100%;
+    color: #534a67;
     font-size: 2em;
     padding: 10px 0;
-    background: #FC9400;    
+    background: #fbd197;
     letter-spacing: 1.3pt;
     margin-top: 1rem !important;
     text-align: center;
@@ -242,11 +243,11 @@ background-color: #8453b7;
 }
 
 .subtitulos3{
-    width: 100%;    
+    width: 100%;
     color: #ffffff;
     font-size: 1.1em;
-    padding: 1px 0px 5px 10px;
-    background: #009FE3;
+    padding: 5px 0px 5px 10px;
+    background: #5c4293;
     margin-bottom: 5px;
     letter-spacing: 1.3pt;
     margin-top: 1rem !important;
@@ -258,14 +259,14 @@ background-color: #8453b7;
 }
 
 .subtitulos4{
-    width: 100%;    
-    color: #ffffff;
+    width: 100%;
+    color: #555;
     font-size: 1.1em;
-    padding: 1px 0px 5px 10px;
-    background: #009FE3;
+    padding: 5px 0px 5px 10px;
+    background: #d2afed;
     margin-bottom: 5px;
     letter-spacing: 1.3pt;
-    margin-top: 1rem !important;  
+    margin-top: 1rem !important;
     font-weight: bold;
 }
 
@@ -330,17 +331,15 @@ background-color: #8453b7;
 }
 
 .span_Adjudicada{
-    color: #31708f;
-    background-color: #bce8f1;
-    border-color: #2e6da4;
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    border-radius: 4px;
-    border: 1px solid transparent;
-    width: 102px !important;
+    width: 100%;
+    color: #5c476d;
+    font-size: 2em;
+    padding: 15px 10px;
+    background: #f7d5a5;
+    letter-spacing: 1.3pt;
+    margin-top: 1rem !important;
     text-align: center;
+    font-weight: bold;
 }
 
 .span_Cerrada{
