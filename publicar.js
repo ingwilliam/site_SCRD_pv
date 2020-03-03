@@ -443,14 +443,15 @@ $(document).ready(function () {
 
                 }
             }
-                                                                        
+             
+             /*
             if(json.convocatoria.descripcion.length>=423)
             {
                 json.convocatoria.descripcion_larga= json.convocatoria.descripcion;
                 json.convocatoria.descripcion = json.convocatoria.descripcion.substr(0,420);
                 $("#descripcion_larga_div").css("display","block");
             }            
-                        
+               */         
             $(".condiciones_participacion_link").click(function () {       
                 window.open(json.convocatoria.condiciones_participacion, '_blank');
             });
