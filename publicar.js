@@ -191,7 +191,12 @@ $(document).ready(function () {
                                 $.each(json.categorias_estimulos, function (key, cat) {
                                     html_table = html_table+'<div class="col-lg-12"><label>Estímulos categoría: '+cat.categoria+'</label></div>';
                                     $.each(cat.estimulos, function (key2, estimulo) {                                    
-                                        html_table = html_table+'<div class="col-lg-12"><label>Número de estímulos:</label><span>'+estimulo.numero_estimulos+'</span></div>';                                                    
+                                        var numero_estimulo_diplay='';
+                                        if(estimulo.numero_estimulos === null || estimulo.numero_estimulos == 0)
+                                        {                
+                                            numero_estimulo_diplay='style="display:none"';
+                                        }                                                                                
+                                        html_table = html_table+'<div class="col-lg-12" '+numero_estimulo_diplay+'><label>Número de estímulos:</label><span>'+estimulo.numero_estimulos+'</span></div>';                                                    
                                         html_table = html_table+'<div class="col-lg-12"><label>Total de recursos:</label><span>'+estimulo.valor_total_estimulos+'</span></div>';                                                                                                                                                                
                                         html_table = html_table+'<div class="col-lg-12"><label>Descripción general de los recursos a otorgar: </label><span>'+estimulo.descripcion_bolsa+'</span></div>';
                                     });                                
