@@ -133,8 +133,7 @@ $(document).ready(function () {
 
                 $("#estado").append('<option value="">:: Seleccionar ::</option>');
                 $("#estado").append('<option value="5">Publicada</option>');
-                $("#estado").append('<option value="51">Abierta</option>');
-                $("#estado").append('<option value="52">Cerrada</option>');
+                $("#estado").append('<option value="32">Cancelada</option>');
                 $("#estado").append('<option value="6">Adjudicada</option>');
 
 
@@ -148,7 +147,7 @@ $(document).ready(function () {
                     "serverSide": true,
                     "lengthMenu": [30, 40, 50],
                     "ajax": {
-                        url: url_pv + "ConvocatoriasWS/all",
+                        url: url_pv + "ConvocatoriasWS/all_view",
                         data: function (d) {
                             var params = new Object();
                             params.anio = $('#anio').val();
