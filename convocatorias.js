@@ -114,13 +114,16 @@ $(document).ready(function () {
                     $.each(json.enfoques, function (key, enfoque) {
                         var selected = '';
                         var active = '';
-                        if (enfoque.id == p_enfoque)
+                        if(enfoque.id!=6)
                         {
-                            selected = 'selected="selected"';
-                            active='active';
+                            if (enfoque.id == p_enfoque)
+                            {
+                                selected = 'selected="selected"';
+                                active='active';
+                            }
+                            $("#enfoque").append('<option value="' + enfoque.id + '" ' + selected + ' >' + enfoque.nombre + '</option>');
+                            $("#ul_enfoques").append('<li class="'+active+'"><a href="' + url_pv_site + 'convocatorias.html?e=' + enfoque.id + '">' + enfoque.nombre + '</a></li>');
                         }
-                        $("#enfoque").append('<option value="' + enfoque.id + '" ' + selected + ' >' + enfoque.nombre + '</option>');
-                        $("#ul_enfoques").append('<li class="'+active+'"><a href="' + url_pv_site + 'convocatorias.html?e=' + enfoque.id + '">' + enfoque.nombre + '</a></li>');
                     });
                 }
 
