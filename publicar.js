@@ -465,9 +465,19 @@ $(document).ready(function () {
             {                
                 $(".div_numero_estimulos").css("display","none");
             }
-            
-            
+                        
             $('#view_convocatoria').loadJSON(json.convocatoria);
+            
+            if(json.convocatoria.id_programa==2)
+            {
+                $(".no_mostrar_pde").css("display","none");
+                $(".mostrar_pdac").css("display","block");
+            }
+            else
+            {
+                $(".no_mostrar_pde").css("display","block");
+                $(".mostrar_pdac").css("display","none");
+            }
             
             download_file();
             

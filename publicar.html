@@ -47,229 +47,374 @@
                     <h4 class="programa"></h4>
                     <h3 class="convocatoria"></h3>
                     <h5 class="entidad"></h5>                                        
-                    <button type="button" class="btn btn-default sup-fran-banner-button" onclick="window.open(url_pv_site+'contenido_limpio.html?id='+getURLParameter('id'), '_blank');">Visualizar contenido limpio de la convocatoria</button>                                                                    
+                    <button type="button" class="btn btn-default sup-fran-banner-button" onclick="window.open(url_pv_site + 'contenido_limpio.html?id=' + getURLParameter('id'), '_blank');">Visualizar contenido limpio de la convocatoria</button>                                                                    
                     <button type="button" class="btn btn-primary sup-fran-banner-button" style="margin-right: 10px;" onclick="window.open(url_pv_admin, '_blank');">Participar</button>                    
                 </div>
             </div>            
         </div>
         <div class="container-fluid" >
-        <div class="row">
-            <input type="hidden" id="id" />            
-            <div class="col-lg-3 col-xl-3  col-md-3 contenedor-izquierdo">            
-                <h2>Tenga en cuenta</h2>
-                <ul class="anclas">
-                    <li><a href="#fecha_importantes">Fechas importantes <span class="fa fa-angle-double-right"></span> </a></li>
-                    <li><a href="#anexos">Anexos <span class="fa fa-angle-double-right"></span> </a></li>
-                    <li><a href="#formatos">Formatos <span class="fa fa-angle-double-right"></span> </a></li>
-                    <li><a href="#resoluciones">Resoluciones <span class="fa fa-angle-double-right"></span> </a></li>
-                    <li><a href="#listados">Listados <span class="fa fa-angle-double-right"></span> </a></li>
-                    <li><a href="#avisos_modificatorios">Avisos modificatorios <span class="fa fa-angle-double-right"></span> </a></li>               
-                </ul>
-                <h2>Novedades</h2>
-                <div id="novedades" class="carousel slide clearfix" data-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
+            <div class="row">
+                <input type="hidden" id="id" />            
+                <div class="col-lg-3 col-xl-3  col-md-3 contenedor-izquierdo">            
+                    <h2>Tenga en cuenta</h2>
+                    <ul class="anclas">
+                        <li><a href="#fecha_importantes">Fechas importantes <span class="fa fa-angle-double-right"></span> </a></li>
+                        <li><a href="#anexos">Anexos <span class="fa fa-angle-double-right"></span> </a></li>
+                        <li><a href="#formatos">Formatos <span class="fa fa-angle-double-right"></span> </a></li>
+                        <li><a href="#resoluciones">Resoluciones <span class="fa fa-angle-double-right"></span> </a></li>
+                        <li><a href="#listados">Listados <span class="fa fa-angle-double-right"></span> </a></li>
+                        <li><a href="#avisos_modificatorios">Avisos modificatorios <span class="fa fa-angle-double-right"></span> </a></li>               
+                    </ul>
+                    <h2>Novedades</h2>
+                    <div id="novedades" class="carousel slide clearfix" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
 
+                        </div>
+                        <a class="left carousel-control" href="#novedades" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#novedades" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
-                    <a class="left carousel-control" href="#novedades" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#novedades" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                    <h3>Registro en la plataforma web</h3>                    
+                    <div style="text-align: justify; padding: 0 10px 0 10px">Para presentar propuestas en cualquiera de las convocatorias del <span class="nombre_programas"></span> (<span class="siglas_programas"></span>) es necesario contar con un usuario en la plataforma web de convocatorias</div>                   
+                    <br/>
+                    <div class="row" style="padding: 0 10px 0 10px">  
+                        <div class="col-lg-6">
+                            <button type="button" class="btn btn-primary" onclick="window.open(url_pv_admin + 'solicitar_usuarios.html', '_blank');">Solicitar Usuario</button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button type="button" class="btn btn-primary" onclick="window.open(url_pv_admin, '_blank');">Ya tengo usuario</button>
+                        </div>                                                
+                    </div>
+                    <br/>
+                    <h3>Condiciones generales de participación</h3>                                        
+                    <div style="text-align: justify; padding: 0 10px 0 10px"> ¿Quiénes pueden participar? ¿Qué documentos se deben presentar? ¿Cuál es el procedimiento para la presentación de propuestas? ¿Quién evalúa las propuestas? ¿Cómo es el proceso de selección de los ganadores? ¿Qué deberes y derechos tienen los ganadores? </div>
+                    <br/>
+                    <div class="row" style="padding: 0 10px 0 10px">  
+                        <div class="col-lg-6">
+                            <button type="button" class="btn btn-primary condiciones_participacion_link">Ver condiciones</button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button type="button" onclick="location.href = 'convocatorias.html'" class="btn btn-primary" style="font-size: 13px">Buscar convocatorias</button>
+                        </div>                                                
+                    </div>
+                </div>            
+                <div class="col-lg-8 col-xl-8 col-md-8 contenedor-centro">                                
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="subtitulos estado"></div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="subtitulos2 convocatoria"></div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="subtitulos3" style="font-size: 19px !important; font-weight: bold;text-decoration: underline"><a class="condiciones_participacion_link" href="javascript:void(0)">Le recomendamos leer aquí, las condiciones generales de participación del <span class="siglas_programas"></span> <span class="fa fa-angle-double-right"></span></a></div>
+                        </div>                        
+                        <div class="col-lg-12">
+                            <div class="subtitulos4">Información básica</div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div style="text-align: justify !important;" class="descripcion"></div>                            
+                            <br/>
+                        </div>                        
+                        <div class="col-lg-12 no_mostrar_pde">
+                            <label>Línea estratégica:</label>
+                            <span class="linea"></span>                            
+                        </div>                        
+                        <div class="col-lg-12 no_mostrar_pde">
+                            <label>Área:</label>
+                            <span class="area"></span>                            
+                        </div>
+                        <div class="col-lg-12 categorias_generales categorias_especificas">
+                            <label>Categorias:</label>
+                        </div>                                                                        
+                        <div class="col-lg-12 categorias_generales categorias_especificas">
+                            <div class="tablas_categorias_generales">
+
+                            </div>
+                        </div>
+                        <div class="div_numero_estimulos col-lg-12 sin_categorias no_mostrar_pde">
+                            <label>Número de estímulos:</label>
+                            <span class="numero_estimulos"></span>                            
+                        </div>                                                                        
+                        <div class="col-lg-12 sin_categorias no_mostrar_pde">
+                            <label>Total de recursos:</label>
+                            <span class="valor_total_estimulos"></span>                            
+                        </div>                                                                        
+                        <div class="col-lg-12 sin_categorias no_mostrar_pde">
+                            <label>Descripción general de los recursos a otorgar:</label>
+                            <span class="descripcion_bolsa"></span>                            
+                        </div> 
+
+                        <div id="recursos_categorias" class="categorias_especificas no_mostrar_pde">
+
+                        </div>
+
+
+                        <div class="col-lg-12">
+                            <div id="fecha_importantes" class="subtitulos4">Cronograma</div>                            
+                        </div>                                                                        
+                        <div class="col-lg-12">
+                            <div class="tablas_cronogramas">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="subtitulos4">Objeto</div>                            
+                        </div>
+                        <div class="col-lg-12">
+                            <div style="text-align: justify !important;" class="objeto"></div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="subtitulos4">Tipo de participante</div>                            
+                        </div>                                                                        
+                        <div class="col-lg-12">
+                            <div class="tablas_participantes">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="tablas_participantes_especiales">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="subtitulos4">Quiénes no pueden participar</div>                            
+                        </div>
+                        <div class="col-lg-12">
+                            <div style="text-align: justify !important;" class="no_pueden_participar"></div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="subtitulos4">Documentos administrativos</div>                            
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="tablas_documentos_administrativos">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="subtitulos4">Documentos técnicos para evaluación</div>                            
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="tablas_documentos_tecnicos">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="subtitulos4">Criterios de evaluación</div>                            
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="tablas_criterios_evaluacion no_mostrar_pde">
+
+                            </div>
+                            <div class="mostrar_pdac">
+                                <table class="table table-hover table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>N°</th>
+                                            <th>Criterio</th>
+                                            <th>Puntaje</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                Pertinencia y bases contextuales
+                                                <ul>
+                                                    <li>Articulación con el Plan de Desarrollo Distrital vigente.</li>
+                                                    <li>Correspondencia con los objetivos del PDAC.</li>
+                                                    <li>Antecedentes y justificación del proyecto</li>
+                                                    <li>Lectura de la problemática y aportes frente a las necesidades de la población y el territorio focalizado.</li>
+                                                    <li>Conocimiento del contexto y trayectoria del proyecto.</li>
+                                                </ul>
+                                            </td>
+                                            <td>0 al 20</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>
+                                                <b>Consistencia e innovación</b><br/>
+                                                Establece la congruencia entre la propuesta creativa, su planteamiento metodológico, el diseño técnico de sus estrategias, la estrategia para vincular a públicos y beneficiarios y la viabilidad de desarrollarse en el contexto actual (adaptabilidad). 
+                                                <ul>
+                                                    <li>Objetivos, población, metodología, metas, estrategia de sistematización de la memoria del proyecto, entre otros.</li>
+                                                </ul>
+                                            </td>
+                                            <td>0 al 20</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td><b>Impacto esperado</b><br/>
+                                                Medida en la que el proyecto articula la situación problemática con la línea de participación y proyecta sus resultados, en términos de la superación de dicho estado de cosas. El proyecto contempla una estrategia que le permita identificar, definir y medir, en clave de saldo pedagógico, su alcance en la transformación cualitativa del territorio, poblaciones y ámbitos intervenidos. 
+                                                <br/>
+                                                ¿Se define con claridad el alcance del proyecto en relación con la línea de participación elegida? ¿establece estrategias e instrumentos para el monitoreo de sus fines? ¿Establece estrategias para realizar aportes a la inclusión social, económica y productiva?
+                                            </td>
+                                            <td>0 al 20</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td><b>Eficiencia</b>
+                                                En aspectos gerenciales y administrativos, el proyecto expresa una distribución equilibrada, equitativa y coherente con los objetivos del talento humano, el recurso financiero, la distribución del tiempo en las actividades planteadas.
+                                                <ul>
+                                                    <li>Presupuesto: coherencia entre los propósitos del proyecto y el costeo y la planeación presupuestal y porcentaje de cofinanciación gestionada.</li>
+                                                    <li>Cronograma</li>
+                                                    <li>Recurso humano definición de roles y equilibrio de estos en relación con las demandas de recurso humano establecidos en la propuesta</li>
+                                                </ul>
+                                            </td>
+                                            <td>0 al 15</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>
+                                                <b>Sustentación</b>
+                                                <ul>                                                            
+                                                    <li>Presentación ejecutiva del proyecto ante el equipo evaluador y respuesta a los interrogantes que éste plantee.</li>
+                                                </ul>                                                                
+                                            </td>
+                                            <td>0 al 25</td>
+                                        </tr>                                        
+                                    </tbody>
+                                </table>
+                                <table class="table table-hover table-bordered">
+                                    <caption><b>Para entidades que NO recibieron cofinanciación en la vigencia 2019 del PDAC</b></caption>
+                                    <thead>
+                                        <tr>
+                                            <th>N°</th>
+                                            <th>Criterio</th>
+                                            <th>Puntaje</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                Pertinencia y bases contextuales
+                                                <ul>
+                                                    <li>Articulación con el Plan de Desarrollo Distrital vigente.</li>
+                                                    <li>Correspondencia con los objetivos del PDAC.</li>
+                                                    <li>Antecedentes y justificación del proyecto</li>
+                                                    <li>Lectura de la problemática y aportes frente a las necesidades de la población y el territorio focalizado.</li>
+                                                    <li>Conocimiento del contexto y trayectoria del proyecto.</li>
+                                                </ul>
+                                            </td>
+                                            <td>0 al 20</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>
+                                                <b>Consistencia e innovación</b><br/>
+                                                Establece la congruencia entre la propuesta creativa, su planteamiento metodológico, el diseño técnico de sus estrategias, la estrategia para vincular a públicos y beneficiarios y la viabilidad de desarrollarse en el contexto actual (adaptabilidad). 
+                                                <ul>
+                                                    <li>Objetivos, población, metodología, metas, estrategia de sistematización de la memoria del proyecto, entre otros.</li>
+                                                </ul>
+                                            </td>
+                                            <td>0 al 20</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td><b>Impacto esperado</b><br/>
+                                                Medida en la que el proyecto articula la situación problemática con la línea de participación y proyecta sus resultados, en términos de la superación de dicho estado de cosas. El proyecto contempla una estrategia que le permita identificar, definir y medir, en clave de saldo pedagógico, su alcance en la transformación cualitativa del territorio, poblaciones y ámbitos intervenidos. 
+                                                <br/>
+                                                ¿Se define con claridad el alcance del proyecto en relación con la línea de participación elegida? ¿establece estrategias e instrumentos para el monitoreo de sus fines? ¿Establece estrategias para realizar aportes a la inclusión social, económica y productiva?
+                                            </td>
+                                            <td>0 al 20</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td><b>Eficiencia</b>
+                                                En aspectos gerenciales y administrativos, el proyecto expresa una distribución equilibrada, equitativa y coherente con los objetivos del talento humano, el recurso financiero, la distribución del tiempo en las actividades planteadas.
+                                                <ul>
+                                                    <li>Presupuesto: coherencia entre los propósitos del proyecto y el costeo y la planeación presupuestal y porcentaje de cofinanciación gestionada.</li>
+                                                    <li>Cronograma</li>
+                                                    <li>Recurso humano definición de roles y equilibrio de estos en relación con las demandas de recurso humano establecidos en la propuesta</li>
+                                                </ul>
+                                            </td>
+                                            <td>0 al 15</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>
+                                                <b>Sustentación</b>
+                                                <ul>                                                            
+                                                    <li>Presentación ejecutiva del proyecto ante el equipo evaluador y respuesta a los interrogantes que éste plantee.</li>
+                                                </ul>                                                                
+                                            </td>
+                                            <td>0 al 10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td><b>Evaluación de la ejecución 2020</b>
+                                                Esta valoración la otorga la entidad encargada de la interventoría o supervisión del proyecto, se otorgará posterior a la sustentación. 
+                                            </td>
+                                            <td>0 al 15</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="subtitulos4">Derechos específicos de los ganadores</div>                            
+                        </div>
+                        <div class="col-lg-12">
+                            <div style="text-align: justify !important;" class="derechos_ganadores"></div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="subtitulos4">Deberes específicos de los ganadores</div>                            
+                        </div>
+                        <div class="col-lg-12">
+                            <div style="text-align: justify !important;" class="deberes_ganadores"></div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div id="anexos" class="subtitulos">Anexos</div>                            
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="documentos_anexos">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div id="formatos" class="subtitulos">Formatos</div>                            
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="documentos_formatos">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div id="resoluciones" class="subtitulos">Resoluciones</div>                            
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="documentos_resoluciones">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div id="listados" class="subtitulos">Listados</div>                            
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="documentos_listados">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div id="avisos_modificatorios" class="subtitulos">Avisos modificatorios</div>                            
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="documentos_avisos">
+
+                            </div>
+                        </div>
+                    </div>                    
                 </div>
-                <h3>Registro en la plataforma web</h3>                    
-                <div style="text-align: justify; padding: 0 10px 0 10px">Para presentar propuestas en cualquiera de las convocatorias del <span class="nombre_programas"></span> (<span class="siglas_programas"></span>) es necesario contar con un usuario en la plataforma web de convocatorias</div>                   
-                <br/>
-                <div class="row" style="padding: 0 10px 0 10px">  
-                    <div class="col-lg-6">
-                        <button type="button" class="btn btn-primary" onclick="window.open(url_pv_admin + 'solicitar_usuarios.html', '_blank');">Solicitar Usuario</button>
-                    </div>
-                    <div class="col-lg-6">
-                        <button type="button" class="btn btn-primary" onclick="window.open(url_pv_admin, '_blank');">Ya tengo usuario</button>
-                    </div>                                                
+                <div class="col-lg-1 col-xl-1 col-md-1 contenedor-derecho">
+
                 </div>
-                <br/>
-                <h3>Condiciones generales de participación</h3>                                        
-                <div style="text-align: justify; padding: 0 10px 0 10px"> ¿Quiénes pueden participar? ¿Qué documentos se deben presentar? ¿Cuál es el procedimiento para la presentación de propuestas? ¿Quién evalúa las propuestas? ¿Cómo es el proceso de selección de los ganadores? ¿Qué deberes y derechos tienen los ganadores? </div>
-                <br/>
-                <div class="row" style="padding: 0 10px 0 10px">  
-                    <div class="col-lg-6">
-                        <button type="button" class="btn btn-primary condiciones_participacion_link">Ver condiciones</button>
-                    </div>
-                    <div class="col-lg-6">
-                        <button type="button" onclick="location.href = 'convocatorias.html'" class="btn btn-primary" style="font-size: 13px">Buscar convocatorias</button>
-                    </div>                                                
-                </div>
-            </div>            
-            <div class="col-lg-8 col-xl-8 col-md-8 contenedor-centro">                                
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="subtitulos estado"></div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="subtitulos2 convocatoria"></div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="subtitulos3" style="font-size: 19px !important; font-weight: bold;text-decoration: underline"><a class="condiciones_participacion_link" href="javascript:void(0)">Le recomendamos leer aquí, las condiciones generales de participación del <span class="siglas_programas"></span> <span class="fa fa-angle-double-right"></span></a></div>
-                    </div>                        
-                    <div class="col-lg-12">
-                        <div class="subtitulos4">Información básica</div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div style="text-align: justify !important;" class="descripcion"></div>                            
-                        <br/>
-                    </div>                        
-                    <div class="col-lg-12">
-                        <label>Línea estratégica:</label>
-                        <span class="linea"></span>                            
-                    </div>                        
-                    <div class="col-lg-12">
-                        <label>Área:</label>
-                        <span class="area"></span>                            
-                    </div>
-                    <div class="col-lg-12 categorias_generales categorias_especificas">
-                        <label>Categorias:</label>
-                    </div>                                                                        
-                    <div class="col-lg-12 categorias_generales categorias_especificas">
-                        <div class="tablas_categorias_generales">
-
-                        </div>
-                    </div>
-                    <div class="div_numero_estimulos col-lg-12 sin_categorias">
-                        <label>Número de estímulos:</label>
-                        <span class="numero_estimulos"></span>                            
-                    </div>                                                                        
-                    <div class="col-lg-12 sin_categorias">
-                        <label>Total de recursos:</label>
-                        <span class="valor_total_estimulos"></span>                            
-                    </div>                                                                        
-                    <div class="col-lg-12 sin_categorias">
-                        <label>Descripción general de los recursos a otorgar:</label>
-                        <span class="descripcion_bolsa"></span>                            
-                    </div> 
-
-                    <div id="recursos_categorias" class="categorias_especificas">
-
-                    </div>
-
-
-                    <div class="col-lg-12">
-                        <div id="fecha_importantes" class="subtitulos4">Cronograma</div>                            
-                    </div>                                                                        
-                    <div class="col-lg-12">
-                        <div class="tablas_cronogramas">
-
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="subtitulos4">Objeto</div>                            
-                    </div>
-                    <div class="col-lg-12">
-                        <div style="text-align: justify !important;" class="objeto"></div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="subtitulos4">Tipo de participante</div>                            
-                    </div>                                                                        
-                    <div class="col-lg-12">
-                        <div class="tablas_participantes">
-
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="tablas_participantes_especiales">
-
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="subtitulos4">Quiénes no pueden participar</div>                            
-                    </div>
-                    <div class="col-lg-12">
-                        <div style="text-align: justify !important;" class="no_pueden_participar"></div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="subtitulos4">Documentos administrativos</div>                            
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="tablas_documentos_administrativos">
-
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="subtitulos4">Documentos técnicos para evaluación</div>                            
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="tablas_documentos_tecnicos">
-
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="subtitulos4">Criterios de evaluación</div>                            
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="tablas_criterios_evaluacion">
-
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="subtitulos4">Derechos específicos de los ganadores</div>                            
-                    </div>
-                    <div class="col-lg-12">
-                        <div style="text-align: justify !important;" class="derechos_ganadores"></div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="subtitulos4">Deberes específicos de los ganadores</div>                            
-                    </div>
-                    <div class="col-lg-12">
-                        <div style="text-align: justify !important;" class="deberes_ganadores"></div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div id="anexos" class="subtitulos">Anexos</div>                            
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="documentos_anexos">
-
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div id="formatos" class="subtitulos">Formatos</div>                            
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="documentos_formatos">
-
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div id="resoluciones" class="subtitulos">Resoluciones</div>                            
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="documentos_resoluciones">
-
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div id="listados" class="subtitulos">Listados</div>                            
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="documentos_listados">
-
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div id="avisos_modificatorios" class="subtitulos">Avisos modificatorios</div>                            
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="documentos_avisos">
-
-                        </div>
-                    </div>
-                </div>                    
-            </div>
-            <div class="col-lg-1 col-xl-1 col-md-1 contenedor-derecho">
-
-            </div>
-        </div>    
+            </div>    
         </div>            
         <div id="footer_ayuda" class="footer-fran-color-claro clearfix">
             <div class="container">
