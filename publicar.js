@@ -86,6 +86,14 @@ $(document).ready(function () {
                 if(json.convocatoria.tiene_categorias == true && json.convocatoria.diferentes_categorias == false){                                 
                     tipo_convocatoria="general";
                     $(".categorias_generales").css("display","block");
+                    $(".sin_categorias").css("display","block");
+                    
+                    //Valido para mostrar solo lo de PDAC
+                    if(json.convocatoria.id_programa==2)
+                    {
+                        $(".no_mostrar_pde").css("display","none");
+                        $(".mostrar_pdac").css("display","block");
+                    } 
                     
                     //categorias de la convocatoria
                     if(Object.keys(json.categorias).length>0)
@@ -332,8 +340,6 @@ $(document).ready(function () {
             
             if(tipo_convocatoria=="general")
             {
-                $(".sin_categorias").css("display","block");
-                
                 //cronograma por la convocatoria
                 if(Object.keys(json.cronogramas).length>0)
                 {
@@ -467,17 +473,6 @@ $(document).ready(function () {
             }
                         
             $('#view_convocatoria').loadJSON(json.convocatoria);
-            
-            if(json.convocatoria.id_programa==2)
-            {
-                $(".no_mostrar_pde").css("display","none");
-                $(".mostrar_pdac").css("display","block");
-            }
-            else
-            {
-                $(".no_mostrar_pde").css("display","block");
-                $(".mostrar_pdac").css("display","none");
-            }
             
             download_file();
             
