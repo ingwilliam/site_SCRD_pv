@@ -178,6 +178,321 @@ function crear_reporte() {
 
 
             plot3.replot();
+            
+            //Grafico
+            var s1 = [1];
+            var ticks = ['Sin información'];
+            if (json.propuestas_entidad_anio.value.length > 0)
+            {
+                var s1 = json.propuestas_entidad_anio.value;
+                var ticks = json.propuestas_entidad_anio.label;
+            }
+
+            plot4 = $.jqplot('propuestas_entidad_anio', [s1], {
+                // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+                animate: true,
+                animateReplot: true,
+                seriesDefaults: {
+                    renderer: $.jqplot.BarRenderer,
+                    rendererOptions: {
+                        varyBarColor: true
+                    },
+                    pointLabels: {show: true}
+                },
+                axes: {
+                    xaxis: {
+                        renderer: $.jqplot.CategoryAxisRenderer,
+                        ticks: ticks
+                    }
+                },
+                highlighter: {show: false}
+            });
+
+
+            plot4.replot();
+            
+            //Grafico
+            var s1 = [1];
+            var ticks = ['Sin información'];
+            if (json.propuestas_area_anio.value.length > 0)
+            {
+                var s1 = json.propuestas_area_anio.value;
+                var ticks = json.propuestas_area_anio.label;
+            }
+
+            plot5 = $.jqplot('propuestas_area_anio', [s1], {
+                // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+                animate: true,
+                animateReplot: true,
+                seriesDefaults: {
+                    renderer: $.jqplot.BarRenderer,
+                    rendererOptions: {
+                        varyBarColor: true
+                    },
+                    pointLabels: {show: true}
+                },
+                    axesDefaults: {
+                        tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                        tickOptions: {
+                            angle: -30,
+                            fontSize: '8pt'
+                        }
+                },
+                axes: {
+                    xaxis: {
+                        renderer: $.jqplot.CategoryAxisRenderer,
+                        ticks: ticks
+                    }
+                },
+                highlighter: {show: false}
+            });
+
+
+            plot5.replot();
+            
+            //Grafico
+            var s1 = [1];
+            var ticks = ['Sin información'];
+            if (json.propuestas_lineaestrategica_anio.value.length > 0)
+            {
+                var s1 = json.propuestas_lineaestrategica_anio.value;
+                var ticks = json.propuestas_lineaestrategica_anio.label;
+            }
+
+            plot6 = $.jqplot('propuestas_lineaestrategica_anio', [s1], {
+                // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+                animate: true,
+                animateReplot: true,
+                seriesDefaults: {
+                    renderer: $.jqplot.BarRenderer,
+                    rendererOptions: {
+                        varyBarColor: true
+                    },
+                    pointLabels: {show: true}
+                },
+                    axesDefaults: {
+                        tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                        tickOptions: {
+                            angle: -30,
+                            fontSize: '8pt'
+                        }
+                },
+                axes: {
+                    xaxis: {
+                        renderer: $.jqplot.CategoryAxisRenderer,
+                        ticks: ticks
+                    }
+                },
+                highlighter: {show: false}
+            });
+
+
+            plot6.replot();
+
+            //Grafico
+            var s1 = [1];
+            var ticks = ['Sin información'];
+            if (json.propuestas_enfoque_anio.value.length > 0)
+            {
+                var s1 = json.propuestas_enfoque_anio.value;
+                var ticks = json.propuestas_enfoque_anio.label;
+            }
+
+            plot7 = $.jqplot('propuestas_enfoque_anio', [s1], {
+                // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+                animate: true,
+                animateReplot: true,
+                seriesDefaults: {
+                    renderer: $.jqplot.BarRenderer,
+                    rendererOptions: {
+                        varyBarColor: true
+                    },
+                    pointLabels: {show: true}
+                },
+                    axesDefaults: {
+                        tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                        tickOptions: {
+                            angle: -30,
+                            fontSize: '8pt'
+                        }
+                },
+                axes: {
+                    xaxis: {
+                        renderer: $.jqplot.CategoryAxisRenderer,
+                        ticks: ticks
+                    }
+                },
+                highlighter: {show: false}
+            });
+
+
+            plot7.replot();
+            
+            //Grafico
+            var s1 = [1];
+            var ticks = ['Sin información'];
+            if (json.propuestas_tipoparticipante_anio.value.length > 0)
+            {
+                var s1 = json.propuestas_tipoparticipante_anio.value;
+                var ticks = json.propuestas_tipoparticipante_anio.label;
+            }
+
+            plot8 = $.jqplot('propuestas_tipoparticipante_anio', [s1], {
+                // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+                animate: true,
+                animateReplot: true,
+                seriesDefaults: {
+                    renderer: $.jqplot.BarRenderer,
+                    rendererOptions: {
+                        varyBarColor: true
+                    },
+                    pointLabels: {show: true}
+                },
+                    axesDefaults: {
+                        tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                        tickOptions: {
+                            angle: -30,
+                            fontSize: '8pt'
+                        }
+                },
+                axes: {
+                    xaxis: {
+                        renderer: $.jqplot.CategoryAxisRenderer,
+                        ticks: ticks
+                    }
+                },
+                highlighter: {show: false}
+            });
+
+
+            plot8.replot();
+            
+            //Grafico
+            var s1 = [1];
+            var ticks = ['Sin información'];
+            if (json.propuestas_localidadeje_anio.value.length > 0)
+            {
+                var s1 = json.propuestas_localidadeje_anio.value;
+                var ticks = json.propuestas_localidadeje_anio.label;
+            }
+
+            plot9 = $.jqplot('propuestas_localidadeje_anio', [s1], {
+                // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+                animate: true,
+                animateReplot: true,
+                seriesDefaults: {
+                    renderer: $.jqplot.BarRenderer,
+                    rendererOptions: {
+                        varyBarColor: true
+                    },
+                    pointLabels: {show: true}
+                },
+                    axesDefaults: {
+                        tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                        tickOptions: {
+                            angle: -30,
+                            fontSize: '8pt'
+                        }
+                },
+                axes: {
+                    xaxis: {
+                        renderer: $.jqplot.CategoryAxisRenderer,
+                        ticks: ticks
+                    }
+                },
+                highlighter: {show: false}
+            });
+
+
+            plot9.replot();
+            
+            //Grafico
+            var s1 = [1];
+            var ticks = ['Sin información'];
+            if (json.propuestas_localidadres_anio.value.length > 0)
+            {
+                var s1 = json.propuestas_localidadres_anio.value;
+                var ticks = json.propuestas_localidadres_anio.label;
+            }
+
+            plot10 = $.jqplot('propuestas_localidadres_anio', [s1], {
+                // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+                animate: true,
+                animateReplot: true,
+                seriesDefaults: {
+                    renderer: $.jqplot.BarRenderer,
+                    rendererOptions: {
+                        varyBarColor: true
+                    },
+                    pointLabels: {show: true}
+                },
+                    axesDefaults: {
+                        tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                        tickOptions: {
+                            angle: -30,
+                            fontSize: '8pt'
+                        }
+                },
+                axes: {
+                    xaxis: {
+                        renderer: $.jqplot.CategoryAxisRenderer,
+                        ticks: ticks
+                    },yaxis: {
+                        min:0,
+                        max:4500
+                    }
+                },
+                highlighter: {show: false}
+            });
+
+            plot10.replot();
+            
+            //Grafico
+            var s1 = [1];
+            var ticks = ['Sin información'];
+            if (json.valor_localidadeje_anio.value.length > 0)
+            {
+                var s1 = json.valor_localidadeje_anio.value;
+                var ticks = json.valor_localidadeje_anio.label;
+            }
+
+            plot11 = $.jqplot('valor_localidadeje_anio', [s1], {
+                // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+                animate: true,
+                animateReplot: true,
+                seriesDefaults: {
+                    renderer: $.jqplot.BarRenderer,
+                    rendererOptions: {
+                        varyBarColor: true
+                    }
+                },
+                    axesDefaults: {
+                        tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                        tickOptions: {
+                            angle: -30,
+                            fontSize: '8pt'
+                        }
+                },
+                axes: {
+                    xaxis: {
+                        renderer: $.jqplot.CategoryAxisRenderer,
+                        ticks: ticks
+                    },
+                    yaxis: {
+                        tickOptions: {
+                            formatString: "$%'d"
+                        }
+                    },
+                    y2axis: {
+                        tickOptions: {
+                            formatString: "$%'d"
+                        }
+                    }
+                }
+            });
+
+            plot11.replot();
+            
 
             $(".fecha_actual").html(json.fecha_corte);
 
