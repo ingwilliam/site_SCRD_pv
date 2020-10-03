@@ -34,13 +34,13 @@
 
         <!-- principales -->
         <link href="convocatorias_files/main.css" rel="stylesheet" type="text/css">        
-        
+
         <!-- jplot -->
         <link href="dist/libraries/jplot/jquery.jqplot.css" rel="stylesheet" type="text/css"/>
-        
+
     </head>
 
-    <body id="view_convocatoria">
+    <body id="view_convocatoria">        
         <div class="sup-fran-color clearfix">
             <ul class="sup-menu">
                 <li class="nav-item"><a  href="https://www.culturarecreacionydeporte.gov.co/convocatorias" style="color: white;">Inicio </a></li>
@@ -65,197 +65,348 @@
                 </div>                    
             </div>     
             <h1>Cifras Generales</h1>                
-                <div class="row">           
-                    <div class="col-lg-6">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                                Convocatorias ofertadas por entidad
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">                                
-                                <div id="estados_convocatoria_anio" ></div>  
-                            </div>
-                            <!-- /.panel-body -->
-                            <div class="panel-footer">
-                                Fecha de corte <span class="fecha_actual"></span>
-                            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    Convocatorias ofertadas por entidad
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="row">           
+                        <div class="col-lg-6">
+
+                            <div id="estados_convocatoria_anio" ></div>  
+
                         </div>
-                        <!-- /.panel -->                                                
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                Convocatorias ofertadas por estado
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">                                
-                                <div id="estados_convocatoria_propuestas_anio" ></div>  
-                            </div>
-                            <!-- /.panel-body -->
-                            <div class="panel-footer">
-                                Fecha de corte <span class="fecha_actual"></span>
-                            </div>
+                        <div class="col-lg-6">
+                            <table class="table" style="font-size: 10px">
+                                <thead>
+                                    <tr>
+                                        <th>Entidad</th>
+                                        <th>No Convocatorias</th>                                    
+                                    </tr>
+                                </thead>
+                                <tbody id="table_estados_convocatoria_anio">
+
+                                </tbody>
+                            </table>
+                            <!-- /.panel -->                                                
                         </div>
-                        <!-- /.panel -->                                                
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                Propuestas inscritas por entidad
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">                                
-                                <div id="propuestas_entidad_anio" ></div>  
-                            </div>
-                            <!-- /.panel-body -->
-                            <div class="panel-footer">
-                                Fecha de corte <span class="fecha_actual"></span>
-                            </div>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+                    Fecha de corte <span class="fecha_actual"></span>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Convocatorias ofertadas por estado
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="row">           
+                        <div class="col-lg-6">
+                            <div id="estados_convocatoria_propuestas_anio" ></div>  
                         </div>
-                        <!-- /.panel -->                                                
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="panel panel-danger">
-                            <div class="panel-heading">
-                                Propuestas inscritas por rango etareo
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">                                
-                                <div id="propuestas_rango_etareo_anio" ></div>  
-                            </div>
-                            <!-- /.panel-body -->
-                            <div class="panel-footer">
-                                Fecha de corte <span class="fecha_actual"></span>
-                            </div>
+                        <div class="col-lg-6">
+                            <table class="table" style="font-size: 10px">
+                                <thead>
+                                    <tr>
+                                        <th>Entidad</th>
+                                        <th>No propuestas inscritas</th>                                    
+                                    </tr>
+                                </thead>
+                                <tbody id="table_estados_convocatoria_propuestas_anio">
+
+                                </tbody>
+                            </table>
+                            <!-- /.panel -->                                                
                         </div>
-                        <!-- /.panel -->                                                
+                    </div>                                                                                    
+                </div>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+                    Fecha de corte <span class="fecha_actual"></span>
+                </div>
+            </div>
+            <!-- /.panel -->                                                                            
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Propuestas inscritas por entidad
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div id="propuestas_entidad_anio" ></div>                              
+                        </div>
+                        <div class="col-lg-6">
+                            <table class="table" style="font-size: 10px">
+                                <thead>
+                                    <tr>
+                                        <th>Estado</th>
+                                        <th>No propuestas inscritas</th>                                    
+                                    </tr>
+                                </thead>
+                                <tbody id="table_propuestas_entidad_anio">
+
+                                </tbody>
+                            </table>
+                            <!-- /.panel -->                                                
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="panel panel-danger">
-                            <div class="panel-heading">
-                                Propuestas inscritas por área
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">                                
-                                <div id="propuestas_area_anio" ></div>  
-                            </div>
-                            <!-- /.panel-body -->
-                            <div class="panel-footer">
-                                Fecha de corte <span class="fecha_actual"></span>
-                            </div>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+                    Fecha de corte <span class="fecha_actual"></span>
+                </div>
+            </div>
+            <!-- /.panel -->      
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    Propuestas inscritas por rango etareo
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">       
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div id="propuestas_rango_etareo_anio" ></div>  
                         </div>
-                        <!-- /.panel -->                                                
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="panel panel-warning">
-                            <div class="panel-heading">
-                                Propuestas inscritas por línea estratégica 
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">                                
-                                <div id="propuestas_lineaestrategica_anio" ></div>  
-                            </div>
-                            <!-- /.panel-body -->
-                            <div class="panel-footer">
-                                Fecha de corte <span class="fecha_actual"></span>
-                            </div>
+                        <div class="col-lg-6">
+                            <table class="table" style="font-size: 10px">
+                                <thead>
+                                    <tr>
+                                        <th>Rango etareo</th>
+                                        <th>No propuestas inscritas</th>                                    
+                                    </tr>
+                                </thead>
+                                <tbody id="table_propuestas_rango_etareo_anio">
+
+                                </tbody>
+                            </table>
                         </div>
-                        <!-- /.panel -->                                                
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                Propuestas inscritas por enfoque
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">                                
-                                <div id="propuestas_enfoque_anio" ></div>  
-                            </div>
-                            <!-- /.panel-body -->
-                            <div class="panel-footer">
-                                Fecha de corte <span class="fecha_actual"></span>
-                            </div>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+                    Fecha de corte <span class="fecha_actual"></span>
+                </div>
+            </div>
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    Propuestas inscritas por área
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div id="propuestas_area_anio" ></div>                                          
                         </div>
-                        <!-- /.panel -->                                                
+                        <div class="col-lg-6">
+                            <table class="table" style="font-size: 10px">
+                                <thead>
+                                    <tr>
+                                        <th>Área</th>
+                                        <th>No propuestas inscritas</th>                                    
+                                    </tr>
+                                </thead>
+                                <tbody id="table_propuestas_area_anio">
+
+                                </tbody>
+                            </table>
+                        </div>                    
                     </div>
-                    <div class="col-lg-6">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                                Propuestas inscritas por tipo de participante  
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">                                
-                                <div id="propuestas_tipoparticipante_anio" ></div>  
-                            </div>
-                            <!-- /.panel-body -->
-                            <div class="panel-footer">
-                                Fecha de corte <span class="fecha_actual"></span>
-                            </div>
-                        </div>
-                        <!-- /.panel -->                                                
+                    <!-- /.panel-body -->
+                    <div class="panel-footer">
+                        Fecha de corte <span class="fecha_actual"></span>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                Propuestas inscritas por localidad de ejecución  
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">                                
-                                <div id="propuestas_localidadeje_anio" ></div>  
-                            </div>
-                            <!-- /.panel-body -->
-                            <div class="panel-footer">
-                                Fecha de corte <span class="fecha_actual"></span>
-                            </div>
+            </div>
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    Propuestas inscritas por línea estratégica 
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div id="propuestas_lineaestrategica_anio" ></div>
                         </div>
-                        <!-- /.panel -->                                                
+                        <div class="col-lg-6">
+                            <table class="table" style="font-size: 10px">
+                                <thead>
+                                    <tr>
+                                        <th>Línea estratégica</th>
+                                        <th>No propuestas inscritas</th>                                    
+                                    </tr>
+                                </thead>
+                                <tbody id="table_propuestas_lineaestrategica_anio">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+                    Fecha de corte <span class="fecha_actual"></span>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Propuestas inscritas por enfoque
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body"> 
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div id="propuestas_enfoque_anio" ></div>  
+                        </div>
+                        <div class="col-lg-6">
+                            <table class="table" style="font-size: 10px">
+                                <thead>
+                                    <tr>
+                                        <th>Enfoque</th>
+                                        <th>No propuestas inscritas</th>                                    
+                                    </tr>
+                                </thead>
+                                <tbody id="table_propuestas_enfoque_anio">
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                Propuestas inscritas por localidad de residencia  
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">                                
-                                <div id="propuestas_localidadres_anio" ></div>  
-                            </div>
-                            <!-- /.panel-body -->
-                            <div class="panel-footer">
-                                Fecha de corte <span class="fecha_actual"></span>
-                            </div>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+                    Fecha de corte <span class="fecha_actual"></span>
+                </div>
+            </div>    
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    Propuestas inscritas por tipo de participante  
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">       
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div id="propuestas_tipoparticipante_anio" ></div>  
                         </div>
-                        <!-- /.panel -->                                                
+                        <div class="col-lg-6">
+                            <table class="table" style="font-size: 10px">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo de participante</th>
+                                        <th>No propuestas inscritas</th>                                    
+                                    </tr>
+                                </thead>
+                                <tbody id="table_propuestas_tipoparticipante_anio">
+
+                                </tbody>
+                            </table>                                         
+                        </div>
+                    </div>                    
+                </div>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+                    Fecha de corte <span class="fecha_actual"></span>
+                </div>
+            </div>    
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Propuestas inscritas por localidad de ejecución  
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">                 
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="propuestas_localidadeje_anio" ></div>  
+                        </div>
+                        <div class="col-lg-12">
+                            <table class="table" style="font-size: 10px">
+                                <thead>
+                                    <tr>
+                                        <th>Localidad de ejecución</th>
+                                        <th>No propuestas inscritas</th>                                    
+                                    </tr>
+                                </thead>
+                                <tbody id="table_propuestas_localidadeje_anio">
+
+                                </tbody>
+                            </table>                                         
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                Monto asignado por localidad de ejecución
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">                                
-                                <div id="valor_localidadeje_anio" ></div>  
-                            </div>
-                            <!-- /.panel-body -->
-                            <div class="panel-footer">
-                                Fecha de corte <span class="fecha_actual"></span>
-                            </div>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+                    Fecha de corte <span class="fecha_actual"></span>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Propuestas inscritas por localidad de residencia  
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">    
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="propuestas_localidadres_anio" ></div>  
                         </div>
-                        <!-- /.panel -->                                                
+                        <div class="col-lg-12">
+                            <table class="table" style="font-size: 10px">
+                                <thead>
+                                    <tr>
+                                        <th>Localidad de residencia</th>
+                                        <th>No propuestas inscritas</th>                                    
+                                    </tr>
+                                </thead>
+                                <tbody id="table_propuestas_localidadres_anio">
+
+                                </tbody>
+                            </table>                                         
+                        </div>
                     </div>
                 </div>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+                    Fecha de corte <span class="fecha_actual"></span>
+                </div>
+            </div> 
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Monto asignado por localidad de ejecución
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">        
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="valor_localidadeje_anio" ></div>  
+                        </div>
+                        <div class="col-lg-12">
+                            <table class="table" style="font-size: 10px">
+                                <thead>
+                                    <tr>
+                                        <th>Localidad de ejecución</th>
+                                        <th>Suma de monto_asignado</th>                                    
+                                    </tr>
+                                </thead>
+                                <tbody id="table_valor_localidadeje_anio">
+
+                                </tbody>
+                            </table>                                         
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+                    Fecha de corte <span class="fecha_actual"></span>
+                </div>
+            </div>
         </div>
+
         <div id="footer_ayuda" class="footer-fran-color-claro clearfix">
             <div class="container">
                 <div class="content row">
@@ -348,20 +499,20 @@
         <!-- Jquery principales -->
         <script src='dist/js/main.js'></script>
         <script src='dist/js/jquery.loadJSON.js'></script>
-        
+
         <!-- jplot -->
         <script type="text/javascript" src="dist/libraries/jplot/jquery.jqplot.js"></script>    
         <script type="text/javascript" src="dist/libraries/jplot/plugins/jqplot.barRenderer.js"></script>
         <script type="text/javascript" src="dist/libraries/jplot/plugins/jqplot.pieRenderer.js"></script>
         <script type="text/javascript" src="dist/libraries/jplot/plugins/jqplot.categoryAxisRenderer.js"></script>
         <script type="text/javascript" src="dist/libraries/jplot/plugins/jqplot.pointLabels.js"></script>
-        
+
         <script type="text/javascript" src="dist/libraries/jplot/plugins/jqplot.dateAxisRenderer.js"></script>
         <script type="text/javascript" src="dist/libraries/jplot/plugins/jqplot.canvasTextRenderer.js"></script>
         <script type="text/javascript" src="dist/libraries/jplot/plugins/jqplot.canvasAxisTickRenderer.js"></script>
         <script type="text/javascript" src="dist/libraries/jplot/plugins/jqplot.categoryAxisRenderer.js"></script>
-        
-        
+
+
         <script src='cifras_anio.js'></script>
 
     </body>

@@ -83,13 +83,23 @@ function crear_reporte() {
         } else
         {
             var json = JSON.parse(result);
-
             var data = [['Sin información', 1]];
-
+            var html_table="";            
+            var total_grafico=0;            
+            $( "#table_estados_convocatoria_anio" ).html("");
+            
             //Grafico
             if (json.estados_convocatoria_anio.length > 0)
             {
                 data = json.estados_convocatoria_anio;
+                                
+                $.each(json.tabla_estados_convocatoria_anio, function (key, value) {
+                    html_table = html_table+'<tr><td>'+value.label+'</td><td>'+addCommas(value.total_propuestas)+'</td></tr>';                    
+                    total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas)
+                });                                
+                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>'+addCommas(total_grafico)+'</b></td></tr>';                    
+                $( "#table_estados_convocatoria_anio" ).append(html_table);                    
+                        
             }
 
             var plot1 = $.jqplot('estados_convocatoria_anio', [data], {
@@ -118,10 +128,20 @@ function crear_reporte() {
             //Grafico
             var s1 = [1];
             var ticks = ['Sin información'];
+            html_table="";
+            total_grafico=0;
+            $( "#table_estados_convocatoria_propuestas_anio" ).html("");
             if (json.estados_convocatoria_propuestas_anio.value.length > 0)
             {
                 var s1 = json.estados_convocatoria_propuestas_anio.value;
                 var ticks = json.estados_convocatoria_propuestas_anio.label;
+                
+                $.each(json.tabla_convocatoria_propuestas_anio, function (key, value) {
+                    html_table = html_table+'<tr><td>'+value.label+'</td><td>'+addCommas(value.total_propuestas)+'</td></tr>';                    
+                    total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas)
+                });                                
+                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>'+addCommas(total_grafico)+'</b></td></tr>';                    
+                $( "#table_estados_convocatoria_propuestas_anio" ).append(html_table);     
             }
 
             plot2 = $.jqplot('estados_convocatoria_propuestas_anio', [s1], {
@@ -150,10 +170,21 @@ function crear_reporte() {
             //Grafico
             var s1 = [1];
             var ticks = ['Sin información'];
+            html_table="";
+            total_grafico=0;
+            $( "#table_propuestas_rango_etareo_anio" ).html("");
+            
             if (json.propuestas_rango_etareo_anio.value.length > 0)
             {
                 var s1 = json.propuestas_rango_etareo_anio.value;
                 var ticks = json.propuestas_rango_etareo_anio.label;
+                
+                $.each(json.tabla_propuestas_rango_etareo_anio, function (key, value) {
+                    html_table = html_table+'<tr><td>'+value.label+'</td><td>'+addCommas(value.total_propuestas)+'</td></tr>';                    
+                    total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas)
+                });                                
+                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>'+addCommas(total_grafico)+'</b></td></tr>';                    
+                $( "#table_propuestas_rango_etareo_anio" ).append(html_table);
             }
 
             plot3 = $.jqplot('propuestas_rango_etareo_anio', [s1], {
@@ -182,10 +213,21 @@ function crear_reporte() {
             //Grafico
             var s1 = [1];
             var ticks = ['Sin información'];
+            html_table="";
+            total_grafico=0;
+            $( "#table_propuestas_entidad_anio" ).html("");
+            
             if (json.propuestas_entidad_anio.value.length > 0)
             {
                 var s1 = json.propuestas_entidad_anio.value;
                 var ticks = json.propuestas_entidad_anio.label;
+                
+                $.each(json.tabla_propuestas_entidad_anio, function (key, value) {
+                    html_table = html_table+'<tr><td>'+value.label+'</td><td>'+addCommas(value.total_propuestas)+'</td></tr>';                    
+                    total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas)
+                });                                
+                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>'+addCommas(total_grafico)+'</b></td></tr>';                    
+                $( "#table_propuestas_entidad_anio" ).append(html_table);
             }
 
             plot4 = $.jqplot('propuestas_entidad_anio', [s1], {
@@ -214,10 +256,22 @@ function crear_reporte() {
             //Grafico
             var s1 = [1];
             var ticks = ['Sin información'];
+            html_table="";
+            total_grafico=0;
+            $( "#table_propuestas_area_anio" ).html("");
+            
             if (json.propuestas_area_anio.value.length > 0)
             {
                 var s1 = json.propuestas_area_anio.value;
                 var ticks = json.propuestas_area_anio.label;
+                
+                $.each(json.table_propuestas_area_anio, function (key, value) {
+                    html_table = html_table+'<tr><td>'+value.label+'</td><td>'+addCommas(value.total_propuestas)+'</td></tr>';                    
+                    total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas)
+                });                                
+                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>'+addCommas(total_grafico)+'</b></td></tr>';                    
+                $( "#table_propuestas_area_anio" ).append(html_table);
+                
             }
 
             plot5 = $.jqplot('propuestas_area_anio', [s1], {
@@ -253,10 +307,21 @@ function crear_reporte() {
             //Grafico
             var s1 = [1];
             var ticks = ['Sin información'];
+            html_table="";
+            total_grafico=0;
+            $( "#table_propuestas_lineaestrategica_anio" ).html("");
+            
             if (json.propuestas_lineaestrategica_anio.value.length > 0)
             {
                 var s1 = json.propuestas_lineaestrategica_anio.value;
                 var ticks = json.propuestas_lineaestrategica_anio.label;
+                
+                $.each(json.table_propuestas_lineaestrategica_anio, function (key, value) {
+                    html_table = html_table+'<tr><td>'+value.label+'</td><td>'+addCommas(value.total_propuestas)+'</td></tr>';                    
+                    total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas)
+                });                                
+                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>'+addCommas(total_grafico)+'</b></td></tr>';                    
+                $( "#table_propuestas_lineaestrategica_anio" ).append(html_table);
             }
 
             plot6 = $.jqplot('propuestas_lineaestrategica_anio', [s1], {
@@ -292,10 +357,22 @@ function crear_reporte() {
             //Grafico
             var s1 = [1];
             var ticks = ['Sin información'];
+            html_table="";
+            total_grafico=0;
+            $( "#table_propuestas_enfoque_anio" ).html("");
+            
             if (json.propuestas_enfoque_anio.value.length > 0)
             {
                 var s1 = json.propuestas_enfoque_anio.value;
                 var ticks = json.propuestas_enfoque_anio.label;
+                
+                $.each(json.table_propuestas_enfoque_anio, function (key, value) {
+                    html_table = html_table+'<tr><td>'+value.label+'</td><td>'+addCommas(value.total_propuestas)+'</td></tr>';                    
+                    total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas)
+                });                                
+                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>'+addCommas(total_grafico)+'</b></td></tr>';                    
+                $( "#table_propuestas_enfoque_anio" ).append(html_table);
+                
             }
 
             plot7 = $.jqplot('propuestas_enfoque_anio', [s1], {
@@ -331,10 +408,21 @@ function crear_reporte() {
             //Grafico
             var s1 = [1];
             var ticks = ['Sin información'];
+            html_table="";
+            total_grafico=0;
+            $( "#table_propuestas_tipoparticipante_anio" ).html("");
+            
             if (json.propuestas_tipoparticipante_anio.value.length > 0)
             {
                 var s1 = json.propuestas_tipoparticipante_anio.value;
                 var ticks = json.propuestas_tipoparticipante_anio.label;
+                
+                $.each(json.table_propuestas_tipoparticipante_anio, function (key, value) {
+                    html_table = html_table+'<tr><td>'+value.label+'</td><td>'+addCommas(value.total_propuestas)+'</td></tr>';                    
+                    total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas)
+                });                                
+                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>'+addCommas(total_grafico)+'</b></td></tr>';                    
+                $( "#table_propuestas_tipoparticipante_anio" ).append(html_table);
             }
 
             plot8 = $.jqplot('propuestas_tipoparticipante_anio', [s1], {
@@ -370,10 +458,21 @@ function crear_reporte() {
             //Grafico
             var s1 = [1];
             var ticks = ['Sin información'];
+            html_table="";
+            total_grafico=0;
+            $( "#table_propuestas_localidadeje_anio" ).html("");
+            
             if (json.propuestas_localidadeje_anio.value.length > 0)
             {
                 var s1 = json.propuestas_localidadeje_anio.value;
                 var ticks = json.propuestas_localidadeje_anio.label;
+                
+                $.each(json.table_propuestas_localidadeje_anio, function (key, value) {
+                    html_table = html_table+'<tr><td>'+value.label+'</td><td>'+addCommas(value.total_propuestas)+'</td></tr>';                    
+                    total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas)
+                });                                
+                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>'+addCommas(total_grafico)+'</b></td></tr>';                    
+                $( "#table_propuestas_localidadeje_anio" ).append(html_table);
             }
 
             plot9 = $.jqplot('propuestas_localidadeje_anio', [s1], {
@@ -409,10 +508,21 @@ function crear_reporte() {
             //Grafico
             var s1 = [1];
             var ticks = ['Sin información'];
+            html_table="";
+            total_grafico=0;
+            $( "#table_propuestas_localidadres_anio" ).html("");
+            
             if (json.propuestas_localidadres_anio.value.length > 0)
             {
                 var s1 = json.propuestas_localidadres_anio.value;
                 var ticks = json.propuestas_localidadres_anio.label;
+                
+                $.each(json.table_propuestas_localidadres_anio, function (key, value) {
+                    html_table = html_table+'<tr><td>'+value.label+'</td><td>'+addCommas(value.total_propuestas)+'</td></tr>';                    
+                    total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas);
+                });                                
+                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>'+addCommas(total_grafico)+'</b></td></tr>';                    
+                $( "#table_propuestas_localidadres_anio" ).append(html_table);
             }
 
             plot10 = $.jqplot('propuestas_localidadres_anio', [s1], {
@@ -450,10 +560,23 @@ function crear_reporte() {
             //Grafico
             var s1 = [1];
             var ticks = ['Sin información'];
+            html_table="";
+            total_grafico=0;
+            $( "#table_valor_localidadeje_anio" ).html("");
+            
             if (json.valor_localidadeje_anio.value.length > 0)
             {
                 var s1 = json.valor_localidadeje_anio.value;
                 var ticks = json.valor_localidadeje_anio.label;
+                
+                $.each(json.table_valor_localidadeje_anio, function (key, value) {
+                    html_table = html_table+'<tr><td>'+value.label+'</td><td>$ '+addCommas(value.total_propuestas)+'</td></tr>';                    
+                    total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas);
+                });                                
+                                
+                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>$ '+addCommas(total_grafico)+'</b></td></tr>';                    
+                $( "#table_valor_localidadeje_anio" ).append(html_table);
+                
             }
 
             plot11 = $.jqplot('valor_localidadeje_anio', [s1], {
@@ -499,4 +622,16 @@ function crear_reporte() {
         }
 
     });
+}
+
+function addCommas(nStr) {
+       nStr += '';
+       var x = nStr.split('.');
+       var x1 = x[0];
+       var x2 = x.length > 1 ? '.' + x[1] : '';
+       var rgx = /(\d+)(\d{3})/;
+       while (rgx.test(x1)) {
+           x1 = x1.replace(rgx, '$1' + '.' + '$2');
+       }
+       return x1 + x2;
 }
