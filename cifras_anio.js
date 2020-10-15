@@ -510,58 +510,6 @@ function crear_reporte() {
             var ticks = ['Sin información'];
             html_table="";
             total_grafico=0;
-            $( "#table_propuestas_localidadres_anio" ).html("");
-            
-            if (json.propuestas_localidadres_anio.value.length > 0)
-            {
-                var s1 = json.propuestas_localidadres_anio.value;
-                var ticks = json.propuestas_localidadres_anio.label;
-                
-                $.each(json.table_propuestas_localidadres_anio, function (key, value) {
-                    html_table = html_table+'<tr><td>'+value.label+'</td><td>'+addCommas(value.total_propuestas)+'</td></tr>';                    
-                    total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas);
-                });                                
-                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>'+addCommas(total_grafico)+'</b></td></tr>';                    
-                $( "#table_propuestas_localidadres_anio" ).append(html_table);
-            }
-
-            plot10 = $.jqplot('propuestas_localidadres_anio', [s1], {
-                // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
-                animate: true,
-                animateReplot: true,
-                seriesDefaults: {
-                    renderer: $.jqplot.BarRenderer,
-                    rendererOptions: {
-                        varyBarColor: true
-                    },
-                    pointLabels: {show: true}
-                },
-                    axesDefaults: {
-                        tickRenderer: $.jqplot.CanvasAxisTickRenderer,
-                        tickOptions: {
-                            angle: -30,
-                            fontSize: '8pt'
-                        }
-                },
-                axes: {
-                    xaxis: {
-                        renderer: $.jqplot.CategoryAxisRenderer,
-                        ticks: ticks
-                    },yaxis: {
-                        min:0,
-                        max:4500
-                    }
-                },
-                highlighter: {show: false}
-            });
-
-            plot10.replot();
-            
-            //Grafico
-            var s1 = [1];
-            var ticks = ['Sin información'];
-            html_table="";
-            total_grafico=0;
             $( "#table_valor_localidadeje_anio" ).html("");
             
             if (json.valor_localidadeje_anio.value.length > 0)

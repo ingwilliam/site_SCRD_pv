@@ -5,6 +5,16 @@ $(document).ready(function () {
 
     $("#iniciar_sesion").attr("href",url_pv_admin);
     
+    if($("#id").attr('value')=="621")
+    {
+        $(".mostrar_pdac_621").css("display","block");
+    }
+    
+    if($("#id").attr('value')=="608")
+    {
+        $(".mostrar_pdac_608").css("display","block");
+    }
+        
     //Realizo la peticion para cargar el formulario
     $.ajax({
         type: 'POST',        
