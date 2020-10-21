@@ -103,6 +103,9 @@ $(document).ready(function () {
                     {
                         $(".no_mostrar_pde").css("display","none");
                         $(".mostrar_pdac").css("display","block");
+                        
+                        $(".titulos_categorias").html("Líneas de participación:");
+                        
                     } 
                     
                     //categorias de la convocatoria
@@ -110,7 +113,17 @@ $(document).ready(function () {
                     {
                         $(".tablas_categorias_generales").css("display","block");                        
                         //creo tablas de categorias
-                        var html_table='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Categoria</th><th>Descripción</th></tr></thead><tbody>';                    
+                        
+                        //Valido para mostrar solo lo de PDAC
+                        if(json.convocatoria.id_programa==2)
+                        {
+                            var html_table='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Línea de participación</th><th>Descripción</th></tr></thead><tbody>';                    
+                        }
+                        else
+                        {
+                            var html_table='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Categoría</th><th>Descripción</th></tr></thead><tbody>';                    
+                        }
+                                            
                         $.each(json.categorias, function (key, categoria) {
                             html_table = html_table+'<tr><td>'+categoria.orden+'</td><td>'+categoria.nombre+'</td><td>'+categoria.descripcion+'</td></tr>';                    
                         });
@@ -174,7 +187,7 @@ $(document).ready(function () {
                             {
                                 $(".tablas_categorias_generales").css("display","block");                        
                                 //creo tablas de categorias
-                                var html_table='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Categoria</th><th>Descripción</th></tr></thead><tbody>';                    
+                                var html_table='<table class="table table-hover table-bordered"><thead><tr><th>N°</th><th>Categoría</th><th>Descripción</th></tr></thead><tbody>';                    
                                 $.each(json.categorias, function (key, categoria) {
                                     html_table = html_table+'<tr><td>'+categoria.orden+'</td><td>'+categoria.nombre+'</td><td>'+categoria.descripcion+'</td></tr>';                    
                                 });
