@@ -202,6 +202,9 @@ function crear_reporte() {
                     xaxis: {
                         renderer: $.jqplot.CategoryAxisRenderer,
                         ticks: ticks
+                    },yaxis: {
+                        min:0,
+                        max:4500
                     }
                 },
                 highlighter: {show: false}
