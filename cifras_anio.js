@@ -62,6 +62,17 @@ $(document).ready(function () {
                 $('#anio').change(function () {
                     crear_reporte();
                 });
+                
+                $("#entidad").append('<option value="">:: Seleccionar ::</option>');
+                if (json.entidades.length > 0) {
+                    $.each(json.entidades, function (key, entidad) {
+                        $("#entidad").append('<option value="' + entidad.id + '"  >' + entidad.nombre + '</option>');
+                    });
+                }
+
+                $('#entidad').change(function () {
+                    crear_reporte();
+                });
 
             }
         }
@@ -566,6 +577,126 @@ function crear_reporte() {
             });
 
             plot11.replot();
+            
+            //Grafico
+            var s1 = [1];
+            var ticks = ['Sin información'];
+            html_table="";
+            total_grafico=0;
+            $( "#table_valor_entidadeje_anio" ).html("");
+            
+            if (json.table_valor_entidadeje_anio.value.length > 0)
+            {
+                var s1 = json.valor_entidadeje_anio.value;
+                var ticks = json.valor_entidadeje_anio.label;
+                
+                $.each(json.table_valor_entidadeje_anio, function (key, value) {
+                    html_table = html_table+'<tr><td>'+value.label+'</td><td>$ '+addCommas(value.total_propuestas)+'</td></tr>';                    
+                    total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas);
+                });                                
+                                
+                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>$ '+addCommas(total_grafico)+'</b></td></tr>';                    
+                $( "#table_valor_entidadeje_anio" ).append(html_table);
+                
+            }
+
+            plot12 = $.jqplot('valor_entidadeje_anio', [s1], {
+                // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+                animate: true,
+                animateReplot: true,
+                seriesDefaults: {
+                    renderer: $.jqplot.BarRenderer,
+                    rendererOptions: {
+                        varyBarColor: true
+                    }
+                },
+                    axesDefaults: {
+                        tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                        tickOptions: {
+                            angle: -30,
+                            fontSize: '8pt'
+                        }
+                },
+                axes: {
+                    xaxis: {
+                        renderer: $.jqplot.CategoryAxisRenderer,
+                        ticks: ticks
+                    },
+                    yaxis: {
+                        tickOptions: {
+                            formatString: "$%'d"
+                        }
+                    },
+                    y2axis: {
+                        tickOptions: {
+                            formatString: "$%'d"
+                        }
+                    }
+                }
+            });
+
+            plot12.replot();
+            
+            //Grafico
+            var s1 = [1];
+            var ticks = ['Sin información'];
+            html_table="";
+            total_grafico=0;
+            $( "#table_valor_entidadeje_anio" ).html("");
+            
+            if (json.valor_ofertado_entidad.value.length > 0)
+            {
+                var s1 = json.valor_ofertado_entidad.value;
+                var ticks = json.valor_ofertado_entidad.label;
+                
+                $.each(json.table_valor_ofertado_entidad, function (key, value) {
+                    html_table = html_table+'<tr><td>'+value.label+'</td><td>$ '+addCommas(value.total_propuestas)+'</td></tr>';                    
+                    total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas);
+                });                                
+                                
+                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>$ '+addCommas(total_grafico)+'</b></td></tr>';                    
+                $( "#table_valor_ofertado_entidad" ).append(html_table);
+                
+            }
+
+            plot13 = $.jqplot('valor_ofertado_entidad', [s1], {
+                // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+                animate: true,
+                animateReplot: true,
+                seriesDefaults: {
+                    renderer: $.jqplot.BarRenderer,
+                    rendererOptions: {
+                        varyBarColor: true
+                    }
+                },
+                    axesDefaults: {
+                        tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                        tickOptions: {
+                            angle: -30,
+                            fontSize: '8pt'
+                        }
+                },
+                axes: {
+                    xaxis: {
+                        renderer: $.jqplot.CategoryAxisRenderer,
+                        ticks: ticks
+                    },
+                    yaxis: {
+                        min:0,
+                        max: 30000000000,
+                        tickOptions: {
+                            formatString: "$%'d"
+                        }
+                    },
+                    y2axis: {
+                        tickOptions: {
+                            formatString: "$%'d"
+                        }
+                    }
+                }
+            });
+
+            plot13.replot();
             
 
             $(".fecha_actual").html(json.fecha_corte);

@@ -64,7 +64,51 @@
                     </div>
                 </div>                    
             </div>     
+            <div class="row">           
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Entidad</label>
+                        <select id='entidad' name="entidad" class="form-control" >                                                    
+                        </select>
+                    </div>
+                </div>                    
+            </div>     
             <h1>Cifras Generales</h1>                
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    Oferta  de Recursos  Programas convocatorias Sector cultura 
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="row">           
+                        <div class="col-lg-6">
+
+                            <div id="valor_ofertado_entidad" ></div>  
+
+                        </div>
+                        <div class="col-lg-6">
+                            <table class="table" style="font-size: 10px">
+                                <thead>
+                                    <tr>
+                                        <th>Entidad</th>
+                                        <th>Ofertado</th>                                    
+                                    </tr>
+                                </thead>
+                                <tbody id="table_valor_ofertado_entidad">
+
+                                </tbody>
+                            </table>
+                            <!-- /.panel -->                                                
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+                    <p>Descripción :  Nos muestra la sumatoria de los Valores  de los totales de recursos ofertados en las convocatorias   que figuran en la plataforma  </p>
+                    Fecha de corte <span class="fecha_actual"></span>
+                </div>
+            </div>
+            
             <div class="panel panel-success">
                 <div class="panel-heading">
                     Numero  de convocatorias Ofrecidas 
@@ -352,7 +396,37 @@
                     Fecha de corte <span class="fecha_actual"></span>
                 </div>
             </div>
-            
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Monto asignado por entidad
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">        
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div id="valor_entidadeje_anio" ></div>  
+                        </div>
+                        <div class="col-lg-6">
+                            <table class="table" style="font-size: 10px">
+                                <thead>
+                                    <tr>
+                                        <th>Entidad</th>
+                                        <th>Suma de monto asignado</th>                                    
+                                    </tr>
+                                </thead>
+                                <tbody id="table_valor_entidadeje_anio">
+
+                                </tbody>
+                            </table>                                         
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+                    <p>Descripción : Nos muestra la sumatoria de los Valores de los totales de recursos asignados en las convocatorias por entidad que figuran en la plataforma con resolución</p>
+                    Fecha de corte <span class="fecha_actual"></span>
+                </div>
+            </div>
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     Monto asignado por localidad de ejecución
