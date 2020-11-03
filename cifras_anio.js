@@ -585,7 +585,7 @@ function crear_reporte() {
             total_grafico=0;
             $( "#table_valor_entidadeje_anio" ).html("");
             
-            if (json.table_valor_entidadeje_anio.value.length > 0)
+            if (json.valor_entidadeje_anio.value.length > 0)
             {
                 var s1 = json.valor_entidadeje_anio.value;
                 var ticks = json.valor_entidadeje_anio.label;
@@ -642,7 +642,7 @@ function crear_reporte() {
             var ticks = ['Sin información'];
             html_table="";
             total_grafico=0;
-            $( "#table_valor_entidadeje_anio" ).html("");
+            $( "#table_valor_ofertado_entidad" ).html("");
             
             if (json.valor_ofertado_entidad.value.length > 0)
             {
