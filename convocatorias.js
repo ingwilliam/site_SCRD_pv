@@ -148,7 +148,7 @@ $(document).ready(function () {
                     "searching": false,
                     "processing": true,
                     "serverSide": true,
-                    "lengthMenu": [30, 40, 50],
+                    "lengthMenu": [100, 150, 200],
                     "ajax": {
                         url: url_pv + "ConvocatoriasWS/all_view",
                         data: function (d) {
