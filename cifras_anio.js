@@ -73,6 +73,17 @@ $(document).ready(function () {
                 $('#entidad').change(function () {
                     crear_reporte();
                 });
+                
+                $("#programa").append('<option value="">:: Seleccionar ::</option>');
+                if (json.programas.length > 0) {
+                    $.each(json.programas, function (key, programa) {
+                        $("#programa").append('<option value="' + programa.id + '"  >' + programa.nombre + '</option>');
+                    });
+                }
+
+                $('#programa').change(function () {
+                    crear_reporte();
+                });
 
             }
         }

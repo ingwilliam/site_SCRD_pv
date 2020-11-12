@@ -63,7 +63,16 @@
                         </select>
                     </div>
                 </div>                    
-            </div>     
+            </div>
+            <div class="row">      
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Tipo de programa</label>
+                        <select id='programa' name="programa" class="form-control" >                                                                                    
+                        </select>                                                
+                    </div>                                                                                                                                                                                                                                                                                                        
+                </div>
+            </div>
             <div class="row">           
                 <div class="col-lg-12">
                     <div class="form-group">
@@ -76,7 +85,7 @@
             <h1>Cifras Generales</h1>                
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    Oferta  de Recursos  Programas convocatorias Sector cultura 
+                    Recursos asignados por entidad
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -104,14 +113,15 @@
                 </div>
                 <!-- /.panel-body -->
                 <div class="panel-footer">
-                    <p>Descripción :  Nos muestra la sumatoria de los Valores  de los totales de recursos ofertados en las convocatorias   que figuran en la plataforma  </p>
+                    <p>Descripción :  Nos muestra el total de recursos asignados al programa por entidad.  </p>
+                    <p>Fuente :  SICON.  </p>
                     Fecha de corte <span class="fecha_actual"></span>
                 </div>
             </div>
             
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    Numero  de convocatorias Ofrecidas 
+                    Convocatorias publicadas
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -139,13 +149,14 @@
                 </div>
                 <!-- /.panel-body -->
                 <div class="panel-footer">
-                    <p>Descripción :  Nos muestra la sumatoria de  las convocatorias  ofertadas por entidad que figuran en la plataforma </p>
+                    <p>Descripción :  Nos muestra el total de convocatorias ofertadas y publicadas por entidad. </p>
+                    <p>Fuente :  SICON.  </p>
                     Fecha de corte <span class="fecha_actual"></span>
                 </div>
             </div>
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    Convocatorias Estado Vs Propuestas Inscritas 
+                    Estados por convocatorias
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -157,8 +168,8 @@
                             <table class="table" style="font-size: 10px">
                                 <thead>
                                     <tr>
-                                        <th>Entidad</th>
-                                        <th>No propuestas inscritas</th>                                    
+                                        <th>Estado de la convocatoria</th>
+                                        <th>No Convocatorias</th>                                    
                                     </tr>
                                 </thead>
                                 <tbody id="table_estados_convocatoria_propuestas_anio">
@@ -171,7 +182,8 @@
                 </div>
                 <!-- /.panel-body -->
                 <div class="panel-footer">
-                    <p>Descripción :  Nos muestra la sumatoria de las propuestas Inscritas Vs el estado  general de las convocatorias ( Adjudicadas  finalizaron proceso de Evaluacion) Publicadas se encuentran en proceso de evaluacion  Cancelada  se cerro la convocatoria</p>
+                    <p>Descripción :  Nos muestra los estados sobre el total de convocatorias ofertadas.</p>
+                    <p>Fuente :  SICON.  </p>
                     Fecha de corte <span class="fecha_actual"></span>
                 </div>
             </div>
@@ -204,14 +216,15 @@
                 </div>
                 <!-- /.panel-body -->
                 <div class="panel-footer">
-                    <p>Descripción :  Nos muestra la sumatoria de las  propuestas  inscritas  a las convocatorias en cada Entidad    </p>
+                    <p>Descripción :  Nos muestra el total de propuestas inscritas a las convocatorias ofertadas por entidad. </p>
+                    <p>Fuente :  SICON.  </p>
                     Fecha de corte <span class="fecha_actual"></span>
                 </div>
             </div>
             <!-- /.panel -->      
             <div class="panel panel-danger">
                 <div class="panel-heading">
-                    Rango de Edad del representante de la propuesta inscrita
+                   Rango etario del representante
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">       
@@ -236,7 +249,8 @@
                 </div>
                 <!-- /.panel-body -->
                 <div class="panel-footer">
-                    <p>Descripción :  Nos muestra la sumatoria de las  propuestas inscritas  a las convocatorias  por el rango de edad del representante de la propuesta    </p>
+                    <p>Descripción :  Nos muestra el total de propuestas inscritas al programa por rango etario del representante.</p>
+                    <p>Fuente :  SICON.  </p>
                     Fecha de corte <span class="fecha_actual"></span>
                 </div>
             </div>
@@ -266,14 +280,15 @@
                     </div>
                     <!-- /.panel-body -->
                     <div class="panel-footer">
-                        <p>Descripción :  Nos muestra la sumatoria de las  propuestas inscritas  a las convocatorias en cada área</p>
+                        <p>Descripción :  Nos muestra el total de propuestas inscritas al conjunto de áreas que conforman el programa.</p>
+                        <p>Fuente :  SICON.  </p>
                         Fecha de corte <span class="fecha_actual"></span>
                     </div>
                 </div>
             </div>
             <div class="panel panel-warning">
                 <div class="panel-heading">
-                     Propuestas inscritas por línea estratégica 
+                     Propuestas inscritas por línea estratégica
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -300,7 +315,8 @@
                 </div>
                 <!-- /.panel-body -->
                 <div class="panel-footer">
-                    <p>Descripción :  Nos muestra la sumatoria de las  propuestas inscritas  a las convocatorias en cada línea estratégica    </p>
+                    <p>Descripción :  Nos muestra el total de propuestas inscritas a las líneas estratégicas que reconocen y promueven los programas institucionales de fomento.</p>
+                    <p>Fuente :  SICON.  </p>
                     Fecha de corte <span class="fecha_actual"></span>
                 </div>
             </div>
@@ -331,13 +347,14 @@
                 </div>
                 <!-- /.panel-body -->
                 <div class="panel-footer">
-                    <p>Descripción :  Nos muestra la sumatoria de las  propuestas inscritas  a las convocatorias en cada enfoque</p>
+                    <p>Descripción :  Nos muestra el total de propuestas inscritas a los enfoques incorporados a la oferta de convocatorias y que responden a la estructura Distrital de implementación de políticas.</p>
+                    <p>Fuente :  SICON.  </p>
                     Fecha de corte <span class="fecha_actual"></span>
                 </div>
             </div>    
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    Propuestas inscritas por tipo de participante  
+                    Propuestas inscritas por tipo de participante
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">       
@@ -362,7 +379,8 @@
                 </div>
                 <!-- /.panel-body -->
                 <div class="panel-footer">
-                    <p>Descripción :  Nos muestra la sumatoria de las  propuestas inscritas  a las convocatorias por tipo de participante</p>
+                    <p>Descripción :  Nos muestra el total de propuestas inscritas por tipo de participante al programa.</p>
+                    <p>Fuente :  SICON.  </p>
                     Fecha de corte <span class="fecha_actual"></span>
                 </div>
             </div>    
@@ -393,12 +411,14 @@
                 </div>
                 <!-- /.panel-body -->
                 <div class="panel-footer">
+                    <p>Descripción :  Nos muestra el total de propuestas inscritas por localidad en la cual se va a ejecutar la propuesta.</p>
+                    <p>Fuente :  SICON.  </p>
                     Fecha de corte <span class="fecha_actual"></span>
                 </div>
             </div>
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    Monto asignado por entidad
+                    Recursos adjudicados por entidad
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">        
@@ -423,13 +443,14 @@
                 </div>
                 <!-- /.panel-body -->
                 <div class="panel-footer">
-                    <p>Descripción : Nos muestra la sumatoria de los Valores de los totales de recursos asignados en las convocatorias por entidad que figuran en la plataforma con resolución</p>
+                    <p>Descripción : Nos muestra el total de recursos adjudicados por entidad a lo largo de la vigencia.</p>
+                    <p>Fuente :  SICON.  </p>
                     Fecha de corte <span class="fecha_actual"></span>
                 </div>
             </div>
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    Monto asignado por localidad de ejecución
+                    Recursos adjudicados por localidad
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">        
@@ -454,7 +475,8 @@
                 </div>
                 <!-- /.panel-body -->
                 <div class="panel-footer">
-                    <p>Descripción :  Nos muestra la sumatoria del monto asignado a las propuestas ganadoras por localidad de ejecución</p>
+                    <p>Descripción :  Nos muestra el total de recursos adjudicados a partir de la localidad de ejecución de las propuestas.</p>
+                    <p>Fuente :  SICON.  </p>
                     Fecha de corte <span class="fecha_actual"></span>
                 </div>
             </div>
