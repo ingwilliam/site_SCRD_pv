@@ -226,7 +226,7 @@ function crear_reporte() {
                         ticks: ticks
                     },yaxis: {
                         min:0,
-                        max:4500
+                        max:10000
                     }
                 },
                 highlighter: {show: false}
