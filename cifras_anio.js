@@ -535,6 +535,7 @@ function crear_reporte() {
             var ticks = ['Sin información'];
             html_table="";
             total_grafico=0;
+            total_entidad=0;
             $( "#table_valor_localidadeje_anio" ).html("");
             
             if (json.valor_localidadeje_anio.value.length > 0)
@@ -543,11 +544,12 @@ function crear_reporte() {
                 var ticks = json.valor_localidadeje_anio.label;
                 
                 $.each(json.table_valor_localidadeje_anio, function (key, value) {
-                    html_table = html_table+'<tr><td>'+value.label+'</td><td>$ '+addCommas(value.total_propuestas)+'</td></tr>';                    
+                    html_table = html_table+'<tr><td>'+value.label+'</td><td>'+value.total_entidad+'</td><td>$ '+addCommas(value.total_propuestas)+'</td></tr>';                    
                     total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas);
+                    total_entidad=parseInt(total_entidad)+parseInt(value.total_entidad);
                 });                                
                                 
-                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>$ '+addCommas(total_grafico)+'</b></td></tr>';                    
+                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>'+total_entidad+'</b></td><td><b>$ '+addCommas(total_grafico)+'</b></td></tr>';                    
                 $( "#table_valor_localidadeje_anio" ).append(html_table);
                 
             }
@@ -594,6 +596,7 @@ function crear_reporte() {
             var ticks = ['Sin información'];
             html_table="";
             total_grafico=0;
+            total_entidad=0;
             $( "#table_valor_entidadeje_anio" ).html("");
             
             if (json.valor_entidadeje_anio.value.length > 0)
@@ -602,11 +605,12 @@ function crear_reporte() {
                 var ticks = json.valor_entidadeje_anio.label;
                 
                 $.each(json.table_valor_entidadeje_anio, function (key, value) {
-                    html_table = html_table+'<tr><td>'+value.label+'</td><td>$ '+addCommas(value.total_propuestas)+'</td></tr>';                    
+                    html_table = html_table+'<tr><td>'+value.label+'</td><td>'+value.total_entidad+'</td><td>$ '+addCommas(value.total_propuestas)+'</td></tr>';                    
                     total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas);
+                    total_entidad=parseInt(total_entidad)+parseInt(value.total_entidad);
                 });                                
                                 
-                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>$ '+addCommas(total_grafico)+'</b></td></tr>';                    
+                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>'+total_entidad+'</b></td><td><b>$ '+addCommas(total_grafico)+'</b></td></tr>';                    
                 $( "#table_valor_entidadeje_anio" ).append(html_table);
                 
             }
@@ -708,6 +712,125 @@ function crear_reporte() {
             });
 
             plot13.replot();
+            
+            //Grafico
+            var s1 = [1];
+            var ticks = ['Sin información'];
+            html_table="";
+            total_grafico=0;
+            total_entidad=0;
+            $( "#table_valor_eje_tipo_participante" ).html("");
+            
+            if (json.valor_eje_tipo_participante.value.length > 0)
+            {
+                var s1 = json.valor_eje_tipo_participante.value;
+                var ticks = json.valor_eje_tipo_participante.label;
+                
+                $.each(json.table_valor_eje_tipo_participante, function (key, value) {
+                    html_table = html_table+'<tr><td>'+value.label+'</td><td>'+value.total_entidad+'</td><td>$ '+addCommas(value.total_propuestas)+'</td></tr>';                    
+                    total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas);
+                    total_entidad=parseInt(total_entidad)+parseInt(value.total_entidad);
+                });                                
+                                
+                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>'+total_entidad+'</b></td><td><b>$ '+addCommas(total_grafico)+'</b></td></tr>';                    
+                $( "#table_valor_eje_tipo_participante" ).append(html_table);
+                
+            }
+
+            plot14 = $.jqplot('valor_eje_tipo_participante', [s1], {
+                // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+                animate: true,
+                animateReplot: true,
+                seriesDefaults: {
+                    renderer: $.jqplot.BarRenderer,
+                    rendererOptions: {
+                        varyBarColor: true
+                    }
+                },
+                    axesDefaults: {
+                        tickRenderer: $.jqplot.CanvasAxisTickRenderer
+                },
+                axes: {
+                    xaxis: {
+                        renderer: $.jqplot.CategoryAxisRenderer,
+                        ticks: ticks
+                    },
+                    yaxis: {
+                        tickOptions: {
+                            formatString: "$%'d"
+                        }
+                    },
+                    y2axis: {
+                        tickOptions: {
+                            formatString: "$%'d"
+                        }
+                    }
+                }
+            });
+
+            plot14.replot();
+            
+            //Grafico
+            var s1 = [1];
+            var ticks = ['Sin información'];
+            html_table="";
+            total_grafico=0;
+            total_entidad=0;
+            $( "#table_valor_eje_area" ).html("");
+            
+            if (json.valor_eje_area.value.length > 0)
+            {
+                var s1 = json.valor_eje_area.value;
+                var ticks = json.valor_eje_area.label;
+                
+                $.each(json.table_valor_eje_area, function (key, value) {
+                    html_table = html_table+'<tr><td>'+value.label+'</td><td>'+value.total_entidad+'</td><td>$ '+addCommas(value.total_propuestas)+'</td></tr>';                    
+                    total_grafico=parseInt(total_grafico)+parseInt(value.total_propuestas);
+                    total_entidad=parseInt(total_entidad)+parseInt(value.total_entidad);
+                });                                
+                                
+                html_table = html_table+'<tr><td><b>Total:</b></td><td><b>'+total_entidad+'</b></td><td><b>$ '+addCommas(total_grafico)+'</b></td></tr>';                    
+                $( "#table_valor_eje_area" ).append(html_table);
+                
+            }
+
+            plot14 = $.jqplot('valor_eje_area', [s1], {
+                // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+                animate: true,
+                animateReplot: true,
+                seriesDefaults: {
+                    renderer: $.jqplot.BarRenderer,
+                    rendererOptions: {
+                        varyBarColor: true
+                    }
+                },
+                    axesDefaults: {
+                        tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                        tickOptions: {
+                            angle: -30,
+                            fontSize: '8pt'
+                        }
+                },
+                axes: {
+                    xaxis: {
+                        renderer: $.jqplot.CategoryAxisRenderer,
+                        ticks: ticks
+                    },
+                    yaxis: {
+                        tickOptions: {
+                            formatString: "$%'d"
+                        }
+                    },
+                    y2axis: {
+                        tickOptions: {
+                            formatString: "$%'d"
+                        }
+                    }
+                }
+            });
+
+            plot14.replot();
+            
             
 
             $(".fecha_actual").html(json.fecha_corte);
