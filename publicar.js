@@ -45,6 +45,16 @@ $(document).ready(function () {
             $(".siglas_programas").html(siglas_programas);
             $(".nombre_programas").html(json.convocatoria.programa);
             
+            if( json.convocatoria.modalidad === 6)
+            {
+                $(".lep_justificacion").css("display","block");
+            }
+            else
+            {
+                $(".lep_justificacion").css("display","none");
+            }
+            
+            
             //verifica si la bolsa aplica para convocatorias sin categorias y convocatorias con categorias generales
             var tipo_convocatoria="";            
                         
