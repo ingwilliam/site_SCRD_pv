@@ -29,6 +29,12 @@ $(document).ready(function () {
             var json = JSON.parse(data);
             
             var siglas_programas="";
+            
+            if(json.convocatoria.convocatoria === "CONVOCATORIA SECTORIAL PARA EL FOMENTO DEL ARTE, LA CULTURA Y EL PATRIMONIO DISTRITAL: ESTRATEGIAS Y SOLUCIONES NOVEDOSAS DESDE EL ARTE Y LA CULTURA")
+            {
+                $(".mensaje_parpadeo").css("display","block");
+            }
+            
             if(json.convocatoria.id_programa==1)
             {
                 siglas_programas="PDE";
